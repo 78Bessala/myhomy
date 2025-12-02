@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './composents/pages/Auth/Register/Register';
  import Accueil from './composents/pages/Accueil/Accueil';
  import Voirtout from './composents/pages/Accueil/Voirtout';
+import Footer from './composents/pages/Accueil/Footer'
+
 function App() {
   return (
     <Router>

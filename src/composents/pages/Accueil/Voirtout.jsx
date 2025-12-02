@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+
 import Accueil from "./Accueil";
 import image from '../../../assets/public/v6.jpg';
 import coeur1 from '../../../assets/public/Heart.svg'
@@ -7,7 +7,8 @@ import image1 from '../../../assets/public/08.jpg'
 import image2 from '../../../assets/public/07.jpeg'
 import image3 from '../../../assets/public/06.jpeg'
 import image4 from '../../../assets/public/03.jpg'
-
+import Footer from "./Footer"
+import Coeur from "./Coeur"
 
 function Voirtout (){
 return(
@@ -23,11 +24,11 @@ return(
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-
-                    <img  src={coeur1} className=" w-[24px] h-[24px] "/>
+			<Coeur/>
+                  {/*  <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-white"></div>
+                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -63,11 +64,11 @@ return(
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-
-                    <img  src={coeur1} className=" w-[24px] h-[24px] "/>
+			<Coeur/>
+                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-white"></div>
+                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -103,11 +104,11 @@ return(
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-
-                    <img  src={coeur1} className=" w-[24px] h-[24px] "/>
+			<Coeur/>
+                    {/* <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-white"></div>
+                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -141,11 +142,11 @@ return(
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-
-                    <img  src={coeur1} className=" w-[24px] h-[24px] "/>
+			<Coeur/>
+                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-white"></div>
+                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -180,11 +181,11 @@ return(
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-
-                    <img  src={coeur1} className=" w-[24px] h-[24px] "/>
+			<Coeur/>	
+                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-white"></div>
+                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -212,6 +213,8 @@ return(
  
 
 </div>
+
+<Footer/>
     </section>
 
 

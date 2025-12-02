@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import search from '../../../assets/public/search.svg'
 
 const Accueil = () => {
   const tabs = ["Voir tout", "Duplex", "Villa", "Appartement", "Studio", "Chambre"];
@@ -58,12 +59,15 @@ const Accueil = () => {
   }, [activeTab, underlineFixed.visible]);
 
   return (
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col gap-4">
 
       {/* Header */}
-      <header className="mt-12">
-        <div className="h-16 w-full bg-[#F3F2F2] p-2 px-4 flex justify-center items-center">
-          <div className="h-8 w-full bg-[#D2D0D7]"></div>
+      <header className="mt-10">
+        <div className="h-16 w-full bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
+          <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex  gap-4 items-center">
+              <img src={search} className="w-[24px]  h-[24px]"/>
+              <h1 className="text-sm "> Rechercher une ville,une date ,un prix</h1>
+          </div>
         </div>
       </header>
 
@@ -80,7 +84,7 @@ const Accueil = () => {
                 ref={(el) => (buttonsRef.current[tab] = el)}
                 onClick={() => handleClick(tab)}
                 className={`text-base transition-all px-1  ${
-                  activeTab === tab ? "text-blue-600 font-semibold" : "text-black"
+                  activeTab === tab ? "text-[#0078EF] font-semibold" : "text-black"
                 }`}
               >
                 {tab}
@@ -89,7 +93,7 @@ const Accueil = () => {
           </nav>
 
           {/* Ligne statique */}
-          <div className="absolute bottom-0 left-0 w-full h-1  bg-blue-400"></div>
+          <div className="absolute bottom-0 left-0 w-full h-1  bg-[#0078EF]"></div>
         </div>
       </div>
 
@@ -108,7 +112,7 @@ const Accueil = () => {
             zIndex: 60,
             transition: "left 150ms ease, width 150ms ease, top 150ms ease",
             pointerEvents: "none",
-            backgroundColor: "#2563eb",
+            backgroundColor: "#0078EF",
             borderRadius: 2,
           }}
         />
