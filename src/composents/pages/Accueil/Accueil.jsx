@@ -1,69 +1,122 @@
-import React from "react";
-import { useState } from "react";
-
-
-  
+import React, { useState, useRef, useEffect } from "react";
 
 const Accueil = () => {
-const tabs = ["Voir tout", "Duplex", "Villa", "Appartement", "Studio", "Chambre"];
+  const tabs = ["Voir tout", "Duplex", "Villa", "Appartement", "Studio", "Chambre"];
   const [activeTab, setActiveTab] = useState("Voir tout");
+
+  //gestion du scroll
+  const [underlineFixed, setUnderlineFixed] = useState({
+    left: 0,
+    top: 0,
+    width: 0,
+    visible: false,
+  });
+
+  const buttonsRef = useRef({});
+  const navRef = useRef(null);
+
+  const handleClick = (tab) => {
+    const btn = buttonsRef.current[tab];
+    if (!btn) return;
+
+    const rect = btn.getBoundingClientRect();
+
+    setActiveTab(tab);
+
+    setUnderlineFixed({
+      left: Math.round(rect.left),     // ← position VIEWPORT (relative à l'écran)
+      top: Math.round(rect.bottom),    // ← position VIEWPORT
+      width: Math.round(rect.width),
+      visible: true,
+    });
+  };
+
+  // Recalcule lors du resize et du scroll
+  useEffect(() => {
+    const handleUpdate = () => {
+      if (!underlineFixed.visible) return;
+
+      const btn = buttonsRef.current[activeTab];
+      if (!btn) return;
+
+      const rect = btn.getBoundingClientRect();
+
+      setUnderlineFixed((s) => ({
+        ...s,
+        left: Math.round(rect.left),
+        top: Math.round(rect.bottom),
+        width: Math.round(rect.width),
+      }));
+    };
+
+    window.addEventListener("resize", handleUpdate);
+    window.addEventListener("scroll", handleUpdate, true); 
+    return () => {
+      window.removeEventListener("resize", handleUpdate);
+      window.removeEventListener("scroll", handleUpdate, true);
+    };
+  }, [activeTab, underlineFixed.visible]);
+
   return (
     <section className="flex flex-col gap-6">
-          <div className=" flex flex-col mt-12">
-      {/* Partie gauche avec le logo sur fond bleu */}
-     <div className=" h-16  w-full bg-green-100 p-2 px-4 flex justify-center items-center">
-      <div className="h-8 w-full bg-blue-600"></div>
-     </div>
-      
-    </div>
-    <div className="flex flex-col ">
-     <div className="flex flex-col">
-      <nav className="flex  w-full gap-12 p-4 overflow-x-auto whitespace-nowrap relative scrollbar-hide">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`
-              text-base transition-all
-              ${activeTab === tab ? "text-blue-600 font-semibold" : "text-black"}
-            `}
+
+      {/* Header */}
+      <header className="mt-12">
+        <div className="h-16 w-full bg-[#F3F2F2] p-2 px-4 flex justify-center items-center">
+          <div className="h-8 w-full bg-[#D2D0D7]"></div>
+        </div>
+      </header>
+
+      {/* Tabs */}
+      <div className="sticky top-0 bg-white z-10">
+        <div className="relative">
+          <nav
+            ref={navRef}
+            className="flex gap-8 p-4 overflow-x-auto whitespace-nowrap scrollbar-hide"
           >
-            {tab}
-          </button>
-        ))}
-      </nav>
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                ref={(el) => (buttonsRef.current[tab] = el)}
+                onClick={() => handleClick(tab)}
+                className={`text-base transition-all px-1  ${
+                  activeTab === tab ? "text-blue-600 font-semibold" : "text-black"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
 
-      {/* Barre animée */}
-      <div className="relative w-full  h-1">
-        <div
-          className="absolute top-0 h-1 bg-blue-600 transition-all duration-400"
-          style={{
-            width: `${120 / tabs.length}%`,
-            left: `${(tabs.indexOf(activeTab) * 150) / tabs.length}%`,
-          }}
-        ></div>
+          {/* Ligne statique */}
+          <div className="absolute bottom-0 left-0 w-full h-1  bg-blue-400"></div>
+        </div>
       </div>
-    </div>
 
-<div className="w-full  bg-blue-500 h-1">
+      {/* <div className="w-full bg-blue-500 h-1"></div> */}
 
-</div>
-    </div>
+      {/* BARRE BLEUE FIXÉE ABSOLUMENT */}
+      {underlineFixed.visible && (
+        <div className="mt-2"
+          aria-hidden
+          style={{
+            position: "fixed",
+            left: underlineFixed.left,
+            top: underlineFixed.top - 1,
+            width: underlineFixed.width,
+            height: 3,
+            zIndex: 60,
+            transition: "left 150ms ease, width 150ms ease, top 150ms ease",
+            pointerEvents: "none",
+            backgroundColor: "#2563eb",
+            borderRadius: 2,
+          }}
+        />
+      )}
 
-
-{/* nouvelle section */}
-    <section className="">
-<div
-  className="w-full h-64 bg-cover bg-center"
-  style={{ backgroundImage: "url('./assets/public/v6.jpg')" }}
-></div>
-
+      
     </section>
-
-
-   
-    </section>
- );
+  );
 };
 
 export default Accueil;
