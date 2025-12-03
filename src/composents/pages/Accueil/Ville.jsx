@@ -14,7 +14,7 @@ function Ville (){
 return(
     <section className="flex flex-col  gap-4">
         <Accueil/>
-<div className=" flex  flex-col  gap-8 m-4">
+<div className=" flex  flex-col  gap-8 m-4 mb-20">
     {/* image1 */}
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
@@ -41,8 +41,8 @@ return(
             <div>
 
                 <h1 className="font-bold  text-sm text-black "> Olembe ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
-                 <h2 className="text-xs  text-black "> 2.000.000/mois</h2>
+                <h2 className="text-xs  text-black "> A partir de mars 2025</h2>
+                 <h2 className="text-xs  text-black "> 1.700.000/mois</h2>
             </div>
 
 
@@ -120,9 +120,9 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Obili ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
-                 <h2 className="text-xs  text-black "> 1.000.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black "> Bamena ,Bafang</h1>
+                <h2 className="text-xs  text-black "> A partir de octobre 2025</h2>
+                 <h2 className="text-xs  text-black "> 1.500.000/mois</h2>
             </div>
 
 
@@ -158,9 +158,9 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Nsam ,Yaounde</h1>
+                <h1 className="font-bold  text-sm text-black "> Fotto ,Dschang</h1>
                 <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
-                 <h2 className="text-xs  text-black "> 1.000.000/mois</h2>
+                 <h2 className="text-xs  text-black "> 2.050.000/mois</h2>
             </div>
 
 
@@ -197,9 +197,9 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Bastos ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
-                 <h2 className="text-xs  text-black "> 1.000.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black "> Victoria ,Limbe </h1>
+                <h2 className="text-xs  text-black "> A partir de juin 2024</h2>
+                 <h2 className="text-xs  text-black "> 1.500.000/mois</h2>
             </div>
 
 
