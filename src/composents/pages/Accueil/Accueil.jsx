@@ -1,126 +1,106 @@
-import React, { useState, useRef, useEffect } from "react";
-import search from '../../../assets/public/search.svg'
+import React, { useState, useRef, useLayoutEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import search from '../../../assets/public/search.svg';
+
+const tabsData = [
+  { label: "Voir tout", path: "/voir-tout" },
+  { label: "Duplex", path: "/duplex" },
+  { label: "Villa", path: "/villa" },
+  { label: "Appartement", path: "/appartement" },
+  { label: "Studio", path: "/studio" },
+  { label: "Chambre", path: "/chambre" },
+];
 
 const Accueil = () => {
-  const tabs = ["Voir tout", "Duplex", "Villa", "Appartement", "Studio", "Chambre"];
-  const [activeTab, setActiveTab] = useState("Voir tout");
-
-  //gestion du scroll
-  const [underlineFixed, setUnderlineFixed] = useState({
-    left: 0,
-    top: 0,
-    width: 0,
-    visible: false,
-  });
-
-  const buttonsRef = useRef({});
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [underline, setUnderline] = useState({ left: 0, width: 0 });
   const navRef = useRef(null);
+  const buttonsRef = useRef({});
 
-  const handleClick = (tab) => {
-    const btn = buttonsRef.current[tab];
-    if (!btn) return;
+  // Détermine le tab actif en fonction de l'URL
+  const activeTab = tabsData.find(tab => tab.path === location.pathname)?.label || tabsData[0].label;
 
-    const rect = btn.getBoundingClientRect();
+  const updateUnderline = (label) => {
+    const btn = buttonsRef.current[label];
+    if (btn && navRef.current) {
+      const navRect = navRef.current.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      setUnderline({
+        left: btnRect.left - navRect.left + navRef.current.scrollLeft,
+        width: btnRect.width,
+      });
 
-    setActiveTab(tab);
-
-    setUnderlineFixed({
-      left: Math.round(rect.left),     // ← position VIEWPORT (relative à l'écran)
-      top: Math.round(rect.bottom),    // ← position VIEWPORT
-      width: Math.round(rect.width),
-      visible: true,
-    });
+      // Scroll automatique pour rendre le tab visible
+      const offset = btn.offsetLeft - navRef.current.scrollLeft;
+      if (offset < 0 || offset + btnRect.width > navRef.current.clientWidth) {
+        navRef.current.scrollTo({
+          left: btn.offsetLeft - navRef.current.clientWidth / 2 + btnRect.width / 2,
+          behavior: "smooth",
+        });
+      }
+    }
   };
 
-  // Recalcule lors du resize et du scroll
-  useEffect(() => {
-    const handleUpdate = () => {
-      if (!underlineFixed.visible) return;
+  const handleClick = (tab) => {
+    navigate(tab.path); // navigation immédiate
+  };
 
-      const btn = buttonsRef.current[activeTab];
-      if (!btn) return;
-
-      const rect = btn.getBoundingClientRect();
-
-      setUnderlineFixed((s) => ({
-        ...s,
-        left: Math.round(rect.left),
-        top: Math.round(rect.bottom),
-        width: Math.round(rect.width),
-      }));
-    };
-
-    window.addEventListener("resize", handleUpdate);
-    window.addEventListener("scroll", handleUpdate, true); 
-    return () => {
-      window.removeEventListener("resize", handleUpdate);
-      window.removeEventListener("scroll", handleUpdate, true);
-    };
-  }, [activeTab, underlineFixed.visible]);
+  // Met à jour la barre à chaque changement de tab (URL)
+  useLayoutEffect(() => {
+    updateUnderline(activeTab);
+  }, [activeTab]);
 
   return (
-    <section className="flex flex-col gap-4">
-
+    <section className="flex flex-col gap-4 ">
       {/* Header */}
       <header className="mt-10">
         <div className="h-16 w-full bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
-          <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex  gap-4 items-center">
-              <img src={search} className="w-[24px]  h-[24px]"/>
-              <h1 className="text-sm "> Rechercher une ville,une date ,un prix</h1>
+          <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
+            <img src={search} className="w-[24px] h-[24px]" alt="search" />
+            <h1 className="text-sm ">Rechercher une ville, une date, un prix</h1>
           </div>
         </div>
       </header>
 
       {/* Tabs */}
       <div className="sticky top-0 bg-white z-10">
-        <div className="relative">
-          <nav
-            ref={navRef}
-            className="flex gap-8 p-4 overflow-x-auto whitespace-nowrap scrollbar-hide"
-          >
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                ref={(el) => (buttonsRef.current[tab] = el)}
-                onClick={() => handleClick(tab)}
-                className={`text-base transition-all px-1  ${
-                  activeTab === tab ? "text-[#0078EF] font-semibold" : "text-black"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </nav>
+        <nav
+          ref={navRef}
+          className="relative flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
+    /* Pour masquage cross-browser si besoin */
+    scrollbarWidth: "none",
+     paddingBottom: "6px",// Firefox
+  }}
 
-          {/* Ligne statique */}
-          <div className="absolute bottom-0 left-0 w-full h-1  bg-[#0078EF]"></div>
-        </div>
+        >
+          {tabsData.map((tab) => (
+            <button
+              key={tab.label}
+              ref={(el) => (buttonsRef.current[tab.label] = el)}
+              onClick={() => handleClick(tab)}
+              className={`text-base transition-all px-1 ${
+                activeTab === tab.label ? "text-[#0078EF] font-semibold" : "text-black"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+
+          {/* Barre bleue */}
+          <div
+            className="absolute bottom-0 h-1 bg-[#0078EF] rounded transition-all duration-300 ease-out"
+            style={{
+              left: underline.left,
+              width: underline.width,
+            }}
+          />
+        </nav>
+        <div className=" w-full bg-[#0078EF] h-1 mt-0.5"></div>
       </div>
-
-      {/* <div className="w-full bg-blue-500 h-1"></div> */}
-
-      {/* BARRE BLEUE FIXÉE ABSOLUMENT */}
-      {underlineFixed.visible && (
-        <div className="mt-2"
-          aria-hidden
-          style={{
-            position: "fixed",
-            left: underlineFixed.left,
-            top: underlineFixed.top - 1,
-            width: underlineFixed.width,
-            height: 3,
-            zIndex: 60,
-            transition: "left 150ms ease, width 150ms ease, top 150ms ease",
-            pointerEvents: "none",
-            backgroundColor: "#0078EF",
-            borderRadius: 2,
-          }}
-        />
-      )}
-
-      
     </section>
   );
 };
 
 export default Accueil;
+

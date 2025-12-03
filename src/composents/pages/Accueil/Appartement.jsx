@@ -1,16 +1,16 @@
 
 import Accueil from "./Accueil";
-import image from '../../../assets/public/v6.jpg';
+import image from '../../../assets/public/a4.jpg';
 import coeur1 from '../../../assets/public/Heart.svg'
 import etoile from '../../../assets/public/etoile.svg'
-import image1 from '../../../assets/public/08.jpg'
-import image2 from '../../../assets/public/07.jpeg'
-import image3 from '../../../assets/public/06.jpeg'
-import image4 from '../../../assets/public/03.jpg'
+import image1 from '../../../assets/public/a1.jpg'
+import image2 from '../../../assets/public/a3.jpg'
+import image3 from '../../../assets/public/a7.jpg'
+import image4 from '../../../assets/public/a6.jpg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
 
-function Voirtout (){
+function Appartement (){
 return(
     <section className="flex flex-col  gap-4">
         <Accueil/>
@@ -24,7 +24,7 @@ return(
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-			<Coeur/>
+            <Coeur/>
                   {/*  <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
@@ -38,7 +38,7 @@ return(
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
-            <div className=" font-body ">
+            <div>
 
                 <h1 className="font-bold  text-sm text-black "> Olembe ,Yaounde</h1>
                 <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
@@ -64,7 +64,7 @@ return(
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-			<Coeur/>
+            <Coeur/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
@@ -104,7 +104,7 @@ return(
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-			<Coeur/>
+            <Coeur/>
                     {/* <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
@@ -142,7 +142,7 @@ return(
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-			<Coeur/>
+            <Coeur/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
@@ -181,7 +181,7 @@ return(
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-			<Coeur/>	
+            <Coeur/>	
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
@@ -222,4 +222,4 @@ return(
 
 }
 
-export default Voirtout;
+export default Appartement;
