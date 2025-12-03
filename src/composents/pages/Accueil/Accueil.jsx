@@ -58,7 +58,7 @@ const Accueil = () => {
         <div className="h-16 w-full bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
           <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
             <img src={search} className="w-[24px] h-[24px]" alt="search" />
-            <h1 className="text-sm ">Rechercher une ville, une date, un prix</h1>
+            <h1 className="text-xs sm:text-sm md:text-base">Rechercher une ville, une date, un prix</h1>
           </div>
         </div>
       </header>
