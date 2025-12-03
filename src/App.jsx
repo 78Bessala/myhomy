@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './composents/pages/Auth/Register/Register';
  import Accueil from './composents/pages/Accueil/Accueil';
  import Voirtout from './composents/pages/Accueil/Voirtout';
+  import Duplex from './composents/pages/Accueil/Duplex';
 import Footer from './composents/pages/Accueil/Footer'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Voirtout/>} />
+        <Route path="/" element={<Duplex/>} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/register" element={<Register />} />
         <Route path="/Accueil" element={<Accueil />} />
