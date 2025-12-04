@@ -7,6 +7,9 @@ import image1 from '../../../assets/public/08.jpg'
 import image2 from '../../../assets/public/07.jpeg'
 import image3 from '../../../assets/public/06.jpeg'
 import image4 from '../../../assets/public/03.jpg'
+
+import { Link } from "react-router-dom";
+
 import Footer from "./Footer"
 import Coeur from "./Coeur"
 
@@ -19,8 +22,9 @@ return(
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
+    <Link to="/Details1" className="w-full h-64">
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -34,7 +38,12 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 
-        </div>  </div>
+        </div>  
+       
+       </Link>
+    
+        
+    </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
@@ -59,8 +68,9 @@ return(
    <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
+    <Link to="/Details2" className="w-full h-64">
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -74,6 +84,7 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 </div>
+</Link>
 </div>
         
      {/* sous titre de l'image */}
@@ -99,8 +110,9 @@ return(
            <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
+    
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -114,13 +126,17 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 
-        </div>  </div>
+        </div>
+      
+    
+        
+    </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Obili ,Yaounde</h1>
+                <h1 className="font-bold  text-sm text-black "> Bastos ,Yaounde</h1>
                 <h2 className="text-xs  text-black "> A partir de mars 2025</h2>
                  <h2 className="text-xs  text-black "> 1.000.000/mois</h2>
             </div>
@@ -137,8 +153,9 @@ return(
            <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
+
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -150,9 +167,12 @@ return(
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-            </div>
-
-        </div>  </div>
+        </div>
+        </div>
+       
+    
+        
+    </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
@@ -176,8 +196,9 @@ return(
            <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
+    
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -189,16 +210,18 @@ return(
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-            </div>
-
-        </div>  </div>
+        </div>
+       </div>
+    
+        
+    </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Bastos ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
+                <h1 className="font-bold  text-sm text-black "> Obili ,Yaounde</h1>
+                <h2 className="text-xs  text-black "> A partir de mars 2025</h2>
                  <h2 className="text-xs  text-black "> 1.000.000/mois</h2>
             </div>
 

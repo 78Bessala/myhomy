@@ -87,9 +87,11 @@ return(
            </div>
           
         </div>
+<div className='mx-4  justify-center items-center'>
+      <button className=' w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
 
-        <button className=' w-ful h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
-
+</div>
+        
 
 <Footer/>
 </section> 

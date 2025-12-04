@@ -19,6 +19,7 @@ return(
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
+    <Link to="/DetailsC" className="w-full h-64">
     <div
           className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
@@ -34,7 +35,9 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 
-        </div>  </div>
+        </div> 
+        </Link>
+         </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
@@ -56,9 +59,12 @@ return(
 
 
   {/* image2 */}
+  
    <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
+   
         {/* Image */}
+        <Link to="/DetailsC1" className="w-full h-64"> 
     <div
           className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
@@ -74,6 +80,7 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 </div>
+</Link>
 </div>
         
      {/* sous titre de l'image */}

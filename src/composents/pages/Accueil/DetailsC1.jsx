@@ -1,4 +1,5 @@
-import image1 from '../../../assets/public/08.jpg'
+
+import image1 from '../../../assets/public/c2.jpeg'
 import fleche from '../../../assets/public/arrow.svg'
 import download from '../../../assets/public/download.svg'
 import map from '../../../assets/public/map.svg'
@@ -9,7 +10,7 @@ import main from '../../../assets/public/main.svg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
 
-function Details2 (){
+function DetailsC1 (){
 return(
 <section className='flex flex-col gap-8'> 
       {/* section maison */}
@@ -36,7 +37,7 @@ return(
 
             <div className=' flex justify-between mx-6 my-2'>
                   <div className=' flex flex-col  gap-0.5'>
-                        <h1 className='font-bold texte-sm text-black'> Villa Meublee</h1>
+                        <h1 className='font-bold texte-sm text-black'> Chambre Meublee</h1>
                         <h1 className='text-xs'>Disponible a partir de juin 2025</h1>
                         <div className=' flex gap-1'>
                               <img src={map} className='w-4 h-4'/>
@@ -57,7 +58,7 @@ return(
             <div className=' flex  gap-2 '>
                   <img src={user} className='w-12 h-12  rounded-full '/>
                   <div className=' flex flex-col'>
-                        <h2 className=''> Mr gregorie ntolo</h2>
+                        <h2 className=''> Mr gregoire toto</h2>
                           <h2 className='text-[#58575D]'> prestataire</h2>
                   </div>
              </div>
@@ -81,21 +82,20 @@ return(
 
            <div className='  h-12 flex gap-4 items-center bg-[#D9E8FF] p-4 rounded-[8px]'>
             <img src={main} className='w-6 h-6 '/>
-            <h1 className='text-sm  flex justify-center items-center w-[294px]'>1.500.000 Fcfa par mois avec une caution de 500.000 Fcfa    </h1>
+            <h1 className='text-sm  flex justify-center items-center w-[294px]'>2.000.000 Fcfa par mois avec une caution de 500.000 Fcfa    </h1>
             </div>
            </div>
           
         </div>
-
-        <div className='mx-4 flex justify-center items-center'>
+<div className='mx-4  justify-center items-center'>
       <button className=' w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
 
 </div>
-       
+        
 
 <Footer/>
 </section> 
 );
 
 }
-export default Details2;
+export default DetailsC1;

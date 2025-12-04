@@ -1,4 +1,4 @@
-import image1 from '../../../assets/public/08.jpg'
+import image1 from '../../../assets/public/a1.jpg'
 import fleche from '../../../assets/public/arrow.svg'
 import download from '../../../assets/public/download.svg'
 import map from '../../../assets/public/map.svg'
@@ -9,7 +9,7 @@ import main from '../../../assets/public/main.svg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
 
-function Details2 (){
+function DetailsA1 (){
 return(
 <section className='flex flex-col gap-8'> 
       {/* section maison */}
@@ -36,7 +36,7 @@ return(
 
             <div className=' flex justify-between mx-6 my-2'>
                   <div className=' flex flex-col  gap-0.5'>
-                        <h1 className='font-bold texte-sm text-black'> Villa Meublee</h1>
+                        <h1 className='font-bold texte-sm text-black'> Appartement Meuble</h1>
                         <h1 className='text-xs'>Disponible a partir de juin 2025</h1>
                         <div className=' flex gap-1'>
                               <img src={map} className='w-4 h-4'/>
@@ -87,15 +87,14 @@ return(
           
         </div>
 
-        <div className='mx-4 flex justify-center items-center'>
+      <div className='mx-4  justify-center items-center'>
       <button className=' w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
 
 </div>
        
-
 <Footer/>
 </section> 
 );
 
 }
-export default Details2;
+export default DetailsA1;
