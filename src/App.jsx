@@ -9,6 +9,9 @@ import Register from './composents/pages/Auth/Register/Register';
   import Appartement from './composents/pages/Accueil/Appartement';
   import Studio  from  './composents/pages/Accueil/Studio'
   import Chambre from './composents/pages/Accueil/Chambre';
+  import Details1 from './composents/pages/Accueil/Details1'
+  import Details2 from './composents/pages/Accueil/Details2'
+   import DetailsA from './composents/pages/Accueil/DetailsA'
 import Footer from './composents/pages/Accueil/Footer'
 
 function App() {
@@ -17,18 +20,14 @@ function App() {
       <Routes>
         {/* Tabs */}
          <Route path="/" element={<Voirtout />} />
-        <Route path="/voir-tout" element={<Voirtout />} />
+        <Route path="/voir-tout" element={<DetailsA />} />
         <Route path="/duplex" element={<Duplex />} />
         <Route path="/villa" element={<Ville />} />
         <Route path="/appartement" element={<Appartement />} />
         <Route path="/studio" element={<Studio />} />
         <Route path="/chambre" element={<Chambre />} />
 
-        {/* <Route path="/" element={<Voirtout/>} />
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/register" element={<Register />} /> */}
-        {/* <Route path="/Accueil" element={<Accueil />} />  */}
-        {/* <Route path="*" element={<Login />} /> Page par défaut */}
+         
       </Routes>
     </Router>
   );
