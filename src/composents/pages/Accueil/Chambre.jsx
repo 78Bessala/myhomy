@@ -9,6 +9,7 @@ import image3 from '../../../assets/public/c4.jpg'
 import image4 from '../../../assets/public/c5.jpg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
+import { Link } from "react-router-dom";
 
 function Appartement (){
 return(

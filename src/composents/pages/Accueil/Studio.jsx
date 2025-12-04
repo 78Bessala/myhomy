@@ -10,7 +10,8 @@ import image4 from '../../../assets/public/s2.jpg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
 
-function Appartement (){
+import { Link } from "react-router-dom";
+function Studio (){
 return(
     <section className="flex flex-col  gap-4">
         <Accueil/>
@@ -19,6 +20,7 @@ return(
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
+    <Link to="/DetailsS" className="w-full h-64">
     <div
           className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
@@ -34,7 +36,8 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 
-        </div>  </div>
+        </div> </Link>
+     </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
@@ -59,7 +62,8 @@ return(
    <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
-    <div
+   <Link to="/DetailsS1" className="w-full h-64">
+   <div
           className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
@@ -74,6 +78,8 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 </div>
+   </Link>
+    
 </div>
         
      {/* sous titre de l'image */}
@@ -222,4 +228,4 @@ return(
 
 }
 
-export default Appartement;
+export default Studio;

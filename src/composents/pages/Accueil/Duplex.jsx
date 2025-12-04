@@ -9,6 +9,7 @@ import image3 from '../../../assets/public/06.jpeg'
 import image4 from '../../../assets/public/03.jpg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
+import { Link } from "react-router-dom";
 
 function Duplex (){
 return(
@@ -19,7 +20,8 @@ return(
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
-    <div
+    <Link to="/DetailsD" className="w-full h-64">
+     <div
           className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
@@ -34,7 +36,8 @@ return(
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
 
-        </div>  </div>
+        </div></Link>
+     </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
@@ -59,7 +62,8 @@ return(
    <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
-    <div
+   <Link to="/DetailsD1" className="w-full h-64">
+   <div
           className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
@@ -73,7 +77,8 @@ return(
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
-</div>
+</div></Link>
+    
 </div>
         
      {/* sous titre de l'image */}
