@@ -9,6 +9,7 @@ import livre from '../../../assets/public/livre.svg'
 import main from '../../../assets/public/main.svg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
+import { Link } from "react-router-dom";
 
 function DetailsC1 (){
 return(
@@ -19,7 +20,7 @@ return(
               style={{ backgroundImage: `url(${image1})` }}>
                 <div className="flex justify-between"> 
                    <div className="border border-white text-black bg-[#FFFFFF] text-xs  h-10 w-10 rounded-full flex justify-center items-center"> 
-                               <img  src={fleche} className='h-6 w-6'/>
+                              <Link to="/chambre" className=""><img  src={fleche} className='h-6 w-6'/></Link> 
                         </div>
                   <div className='flex gap-2'>
                         <div className="border border-white text-black bg-[#FFFFFF] text-xs  h-10 w-10 rounded-full flex justify-center items-center"> 

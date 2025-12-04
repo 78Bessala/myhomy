@@ -22,7 +22,7 @@ return(
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
-    <Link to="/Details1" className="w-full h-64">
+    
     <div
           className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
@@ -31,16 +31,18 @@ return(
 			<Coeur/>
                   {/*  <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
+            <Link to="/Details1" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 
         </div>  
        
-       </Link>
+       
     
         
     </div>
@@ -68,7 +70,7 @@ return(
    <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
-    <Link to="/Details2" className="w-full h-64">
+    
     <div
           className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
@@ -77,14 +79,16 @@ return(
 			<Coeur/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
+            <Link to="/Details2" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 </div>
-</Link>
+
 </div>
         
      {/* sous titre de l'image */}
