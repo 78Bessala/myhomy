@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Login from './composents/pages/Auth/Login/Login';
 
-import Register from './composents/pages/Auth/Register/Register';
- import Accueil from './composents/pages/Accueil/Accueil';
+
  import Voirtout from './composents/pages/Accueil/Voirtout';
   import Duplex from './composents/pages/Accueil/Duplex';
   import Ville from './composents/pages/Accueil/Ville';
@@ -21,7 +20,13 @@ import Register from './composents/pages/Auth/Register/Register';
     import DetailsA1 from './composents/pages/Accueil/DetailsA1'
      import DetailsC from './composents/pages/Accueil/DetailsC'
        import DetailsC1 from './composents/pages/Accueil/DetailsC1'
-import Footer from './composents/pages/Accueil/Footer'
+       import  Reservation  from './composents/pages/Accueil/Reservation'
+import Favoris from './composents/pages/Accueil/Favoris';
+import Message from './composents/pages/Accueil/Message'
+import Profil from './composents/pages/Accueil/Profil'
+// import '../../../index.css';
+
+
 
 function App() {
   return (
@@ -35,6 +40,15 @@ function App() {
         <Route path="/appartement" element={<Appartement />} />
         <Route path="/studio" element={<Studio />} />
         <Route path="/chambre" element={<Chambre />} />
+
+        {/* menu phone */}
+          <Route path="/reservation" element={<Reservation/>} />
+        <Route path="/favoris" element={<Favoris/>} />
+       <Route path="/message" element={<Message/>} /> 
+         {/* <Route path="/profil "element={<Profil/>} />  */}
+
+        
+        
         
         {/* Detail pages */}
         <Route path="/Details1" element={<Details1 />} />

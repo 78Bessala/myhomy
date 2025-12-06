@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./index.html",
@@ -5,23 +6,24 @@ module.exports = {
   ],
   theme: {
     extend: {
-    fontFamily: {
+      fontFamily: {
         body: ['Inter', 'sans-serif'],
-       },
       },
+      colors: {
+        primary: "var(--primary)",
+      },
+    },
   },
+
   plugins: [
     function ({ addUtilities }) {
       addUtilities({
-        '.scrollbar-hide': {
-          '-ms-overflow-style': 'none',
-          'scrollbar-width': 'none',
-          '&::-webkit-scrollbar': {
-            display: 'none',
+        ".scrollbar-hide": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
           },
-        },
-        '.scrollbar-hide::-webkit-scrollbar': {
-          display: 'none',
         },
       });
     },

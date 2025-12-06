@@ -7,8 +7,10 @@
 body {
   font-family: 'Inter', sans-serif;
 }
-
-
+ 
+:root {
+ --primary: #0078EF;
+}
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
