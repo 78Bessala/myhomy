@@ -39,10 +39,10 @@ return(
             <div className=' flex justify-between mx-6 my-2'>
                   <div className=' flex flex-col  gap-0.5'>
                         <h1 className='font-bold texte-sm text-black'> Chambre Meublee</h1>
-                        <h1 className='text-xs'>Disponible a partir de juin 2025</h1>
+                        <h1 className='text-xs'>Disponible a partir de mars 2025</h1>
                         <div className=' flex gap-1'>
                               <img src={map} className='w-4 h-4'/>
-                              <h2 className='text-xs'> Olembe,Yaounde</h2>
+                              <h2 className='text-xs'> Djidda,Garoua</h2>
                         </div>
 
                   </div>
@@ -78,12 +78,12 @@ return(
 
              <div className=' h-12 flex  gap-4 items-center bg-[#D9E8FF] p-4 rounded-[8px]'>
                   <img src={livre} className='w-6 h-6  '/>
-                  <h1 className='text-sm flex justify-center items-center'>2 Salons, 4 Chambres, 3 Salles de bain, 1 Cuisine, Parking, Piscine, Terrasse  </h1>
+                  <h1 className='text-sm flex justify-center items-center'> 1 Chambre, 1 Salle de bain, 1 Cuisine </h1>
            </div>
 
            <div className='  h-12 flex gap-4 items-center bg-[#D9E8FF] p-4 rounded-[8px]'>
             <img src={main} className='w-6 h-6 '/>
-            <h1 className='text-sm  flex justify-center items-center w-[294px]'>2.000.000 Fcfa par mois avec une caution de 500.000 Fcfa    </h1>
+            <h1 className='text-sm  flex justify-center items-center w-[294px]'>30.000 Fcfa par mois avec une caution de 20.000 Fcfa    </h1>
             </div>
            </div>
           
