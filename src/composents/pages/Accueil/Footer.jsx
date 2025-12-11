@@ -30,7 +30,8 @@ function Footer() {
   const activeItem = getActiveItem();
 
   return (
-    <section className="fixed bottom-0 left-0 right-0 flex flex-col gap-1 bg-white z-50">
+   <section className="sm:block md:hidden fixed bottom-0 left-0 right-0 flex flex-col gap-1 bg-white z-50">
+
       <div className="w-full bg-[#0078EF] h-1"></div>
 
       <div className="flex justify-between mx-4 py-2">

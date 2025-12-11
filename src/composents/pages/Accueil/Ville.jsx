@@ -8,10 +8,53 @@ import image2 from '../../../assets/public/v3.jpg'
 import image3 from '../../../assets/public/v4.jpg'
 import image4 from '../../../assets/public/v5.jpg'
 import Footer from "./Footer"
+import { Link } from 'react-router-dom'
+// import { useContext } from 'react'
+// import { FavorisContext } from '../../../composents/pages/Accueil/FavorisContext'   
 import Coeur from "./Coeur"
-import { Link } from "react-router-dom";
 
 function Ville (){
+  // Propriétés pour les favoris
+  const prop1 = {
+    id: 'Details1',
+    image: image,
+    title: "Villa Meublee",
+    location: "Olembe, Yaounde",
+    date: "Juin 2025"
+  };
+
+  const prop2 = {
+    id: 'DetailsV1',
+    image: image1,
+    title: "Villa Meublee",
+    location: "Melen, Yaounde",
+    date: "Juin 2025"
+  };
+
+  const prop3 = {
+    id: 'DetailsV',
+    image: image2,
+    title: "Villa Meublée",
+    location: "Bastos, Yaounde",
+    date: "Juin 2025"
+  };
+
+  const prop4 = {
+    id: 'villa4',
+    image: image3,
+    title: "Villa Meublée",
+    location: "Yaoundé Centre",
+    date: "Juillet 2025"
+  };
+
+  const prop5 = {
+    id: 'villa5',
+    image: image4,
+    title: "Villa non Meublée",
+    location: "Melen, Yaounde",
+    date: "Août 2025"
+  };
+
 return(
     <section className="flex flex-col  gap-4">
         <Accueil/>
@@ -26,8 +69,7 @@ return(
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
-                  {/*  <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
+            <Coeur itemData={prop1}/>
             </div>
             <Link to="/DetailsV" className="">
             <div className=" flex gap-1 justify-end">
@@ -70,10 +112,9 @@ return(
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
-                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
+            <Coeur itemData={prop2}/>
             </div>
-        <Link to="/DetailsV1" className="">
+            <Link to="/DetailsV1" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -114,15 +155,17 @@ return(
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <Coeur itemData={prop3}/>
                     {/* <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
+            <Link to="/DetailsV" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 
         </div>  </div>
      {/* sous titre de l'image */}
@@ -152,15 +195,17 @@ return(
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <Coeur itemData={prop4}/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
+            <Link to="/DetailsV" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 
         </div>  </div>
      {/* sous titre de l'image */}
@@ -191,15 +236,16 @@ return(
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>	
-                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
+            <Coeur itemData={prop5}/>	
             </div>
+            <Link to="/DetailsV" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 
         </div>  </div>
      {/* sous titre de l'image */}

@@ -9,8 +9,28 @@ import livre from '../../../assets/public/livre.svg'
 import main from '../../../assets/public/main.svg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import { ReservationContext } from '../../../context/ReservationContext';
 function DetailsV1 (){
+const { addReservation } = useContext(ReservationContext);
+const navigate = useNavigate();
+
+const propertyData = {
+  id: 'DetailsV1',
+  image: image1,
+  title: "Villa Meublee",
+  location: "Melen, Yaounde",
+  date: "Juin 2025"
+};
+
+const handleReservation = () => {
+  addReservation({
+    ...propertyData,
+    reservedDate: new Date().toLocaleDateString()
+  });
+  navigate("/reservation");
+};
 return(
 <section className='flex flex-col gap-8'> 
       {/* section maison */}
@@ -88,7 +108,7 @@ return(
           
         </div>
 <div className='mx-4  justify-center items-center'>
-      <button className=' w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
+      <button onClick={handleReservation} className=' w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
 
 </div>
         

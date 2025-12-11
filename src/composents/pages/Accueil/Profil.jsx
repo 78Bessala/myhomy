@@ -1,8 +1,8 @@
-import Footer from '../../../composents/pages/Accueil/Footer'
+import Footer from './Footer'
 
 
 
-function Reservation(){
+function Profil(){
 
     return(
         <section>
@@ -14,4 +14,4 @@ function Reservation(){
     );
 }
 
-export default Reservation;
+export default Profil;

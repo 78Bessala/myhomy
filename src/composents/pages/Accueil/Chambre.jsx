@@ -10,8 +10,51 @@ import image4 from '../../../assets/public/c5.jpg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+// import { FavorisContext } from '../../context/FavorisContext';
 
-function Appartement (){
+function Chambre (){
+  // Propriétés pour les favoris
+  const prop1 = {
+    id: 'DetailsC',
+    image: image,
+    title: "Chambre Meublée",
+    location: "Omnisports, Yaounde",
+    date: "Avril 2025"
+  };
+
+  const prop2 = {
+    id: 'DetailsC1',
+    image: image1,
+    title: "Chambre Meublée",
+    location: "Akwa, Douala",
+    date: "Mai 2025"
+  };
+
+  const prop3 = {
+    id: 'chambre3',
+    image: image2,
+    title: "Chambre Meublée",
+    location: "Yaoundé Centre",
+    date: "Juin 2025"
+  };
+
+  const prop4 = {
+    id: 'chambre4',
+    image: image3,
+    title: "Chambre non Meublée",
+    location: "Douala Centre",
+    date: "Juillet 2025"
+  };
+
+  const prop5 = {
+    id: 'chambre5',
+    image: image4,
+    title: "Chambre Meublée",
+    location: "Melen, Yaounde",
+    date: "Août 2025"
+  };
+
 return(
     <section className="flex flex-col  gap-4">
         <Accueil/>
@@ -26,10 +69,10 @@ return(
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
-                  {/*  <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
-            </div>
-             <Link to="/DetailsC" className="">
+            <Coeur itemData={prop1}/>
+            
+         </div>
+            <Link to="/DetailsC" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -40,7 +83,6 @@ return(
 
         </div> 
         
-         </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
@@ -73,7 +115,7 @@ return(
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <Coeur itemData={prop2}/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
   <Link to="/DetailsC1" className="">
@@ -116,7 +158,7 @@ return(
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <Coeur itemData={prop3}/>
                     {/* <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <div className=" flex gap-1 justify-end">
@@ -193,9 +235,7 @@ return(
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>	
-                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
-            </div>
+            <Coeur itemData={prop5}/>	
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -222,8 +262,9 @@ return(
         </div>
    </div>
  
- 
+ </div>
 
+</div>
 </div>
 
 <Footer/>
@@ -234,4 +275,4 @@ return(
 
 }
 
-export default Appartement;
+export default Chambre;

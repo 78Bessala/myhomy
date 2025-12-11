@@ -1,17 +1,74 @@
-import Footer from '../../../composents/pages/Accueil/Footer'
+import Footer from './Footer';
+import heart from '../../../assets/public/heart.svg';
+import etoile from '../../../assets/public/etoile.svg';
+import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { FavorisContext } from '../../../composents/pages/Accueil/FavorisContext';
 
+function Favoris() {
 
+    const { favoris } = useContext(FavorisContext);
 
-function Reservation(){
+    return (
+        <section className='flex flex-col gap-4 pt-12 min-h-screen bg-[#D9D9D9]'>
 
-    return(
-        <section>
+            <div className='flex flex-col gap-2'>
+                <div className='w-full h-12 bg-[#0078EF] flex justify-center items-center'>
+                    <h1 className='text-white text-xl'>Vos favoris</h1>
+                </div>
+            </div>
 
+            <div id="Favoris">
+                <div className='m-4 grid grid-cols-2 gap-4'>
 
-            <Footer/>
+                    {favoris.length > 0 ? (
+                        favoris.map((item) => (
+                            <div key={item.id} className='flex flex-col gap-1'>
+
+                                <div
+                                    className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+                                    style={{ backgroundImage: `url(${item.image})` }}
+                                >
+                                    <div className="flex justify-end">
+                                        <img src={heart} className="w-[24px] h-[24px]" />
+                                    </div>
+
+                                    <Link to={`/${item.id}`}>
+                                        <div className="flex gap-1 justify-end">
+                                            <div className="w-2 h-2 rounded-full border border-black bg-[#0078EF]"></div>
+                                            <div className="w-2 h-2 rounded-full border border-black bg-white"></div>
+                                            <div className="w-2 h-2 rounded-full border border-black bg-white"></div>
+                                            <div className="w-2 h-2 rounded-full border border-black bg-white"></div>
+                                        </div>
+                                    </Link>
+                                </div>
+
+                                <div className="mx-2 flex justify-between">
+                                    <div>
+                                        <h1 className="font-bold text-sm text-black">{item.title}</h1>
+                                        <h2 className="text-xs text-black">{item.location}</h2>
+                                        <h2 className="text-xs text-black">À partir de {item.date}</h2>
+                                    </div>
+                                     <div className="flex  gap-1">
+                                                    <img src={etoile}  className="w-4 h-4 mt-1 "/>
+                                                    <h1 className="text-[15px] text-black">5.0</h1>
+                                     </div>
+                                </div>
+
+                            </div>
+                        ))
+                    ) : (
+                        <div className='col-span-2 flex justify-center items-center h-40'>
+                            <h1 className='text-xl text-[#58575D]'>Aucun favori pour le moment</h1>
+                        </div>
+                    )}
+
+                </div>
+            </div>
+
+            <Footer />
         </section>
-
     );
 }
 
-export default Reservation;
+export default Favoris;

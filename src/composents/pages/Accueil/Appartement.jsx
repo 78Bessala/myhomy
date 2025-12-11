@@ -8,11 +8,57 @@ import image2 from '../../../assets/public/a3.jpg'
 import image3 from '../../../assets/public/a7.jpg'
 import image4 from '../../../assets/public/a6.jpg'
 import Footer from "./Footer"
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+// import { FavorisContext } from '../../../composents/pages/Accueil/FavorisContext '
 import Coeur from "./Coeur"
-import { Link } from "react-router-dom";
 
 function Appartement (){
+  // Propriétés pour les favoris
+  const prop1 = {
+    id: 'DetailsA',
+    image: image,
+    title: "Appartement non Meublé",
+    location: "Efoulan, Yaounde",
+    date: "Juin 2025"
+  };
+
+  const prop2 = {
+    id: 'DetailsA1',
+    image: image1,
+    title: "Appartement Meublé",
+    location: "Nlongkak, Yaounde",
+    date: "Août 2025"
+  };
+
+  const prop3 = {
+    id: 'appartement3',
+    image: image2,
+    title: "Appartement Meublé",
+    location: "Yaoundé Centre",
+    date: "Juillet 2025"
+  };
+
+  const prop4 = {
+    id: 'appartement4',
+    image: image3,
+    title: "Appartement non Meublé",
+    location: "Douala Centre",
+    date: "Août 2025"
+  };
+
+  const prop5 = {
+    id: 'appartement5',
+    image: image4,
+    title: "Appartement Meublé",
+    location: "Melen, Yaounde",
+    date: "Septembre 2025"
+  };
+
 return(
+
+
+
     <section className="flex flex-col  gap-4">
         <Accueil/>
 <div className=" flex  flex-col  gap-8 m-4 mb-20">
@@ -26,7 +72,7 @@ return(
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <button onClick={() => {}}> <Coeur itemData={prop1}/> </button>
                   {/*  <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <Link to="/DetailsA" className="">
@@ -68,7 +114,7 @@ return(
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <Coeur itemData={prop2}/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
             <Link to="/DetailsA1" className="">
@@ -101,6 +147,7 @@ return(
 </div>
 
 
+
           {/* image3 */}
            <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
@@ -110,10 +157,9 @@ return(
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
-                    {/* <img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
+            <Coeur itemData={prop4}/>
             </div>
-            <Link to="/DetailsA1" className="">
+            <Link to="/DetailsA" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
@@ -150,15 +196,17 @@ return(
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>
+            <Coeur itemData={prop4}/>
                      {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
             </div>
+            <Link to="/DetailsA" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 
         </div>  </div>
      {/* sous titre de l'image */}
@@ -189,15 +237,16 @@ return(
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur/>	
-                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
+            <Coeur itemData={prop5}/>	
             </div>
+            <Link to="/DetailsA" className="">
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
                  <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
                   <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
                    <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
             </div>
+            </Link>
 
         </div>  </div>
      {/* sous titre de l'image */}

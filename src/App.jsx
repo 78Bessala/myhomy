@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Login from './composents/pages/Auth/Login/Login';
 
+import { ReservationProvider } from './context/ReservationContext';
+import { FavorisProvider } from './composents/pages/Accueil/FavorisContext';
 
  import Voirtout from './composents/pages/Accueil/Voirtout';
   import Duplex from './composents/pages/Accueil/Duplex';
@@ -30,43 +32,47 @@ import Profil from './composents/pages/Accueil/Profil'
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Tabs */}
-         <Route path="/" element={<Voirtout />} />
-        <Route path="/voir-tout" element={<Voirtout />} />
-        <Route path="/duplex" element={<Duplex />} />
-        <Route path="/villa" element={<Ville />} />
-        <Route path="/appartement" element={<Appartement />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="/chambre" element={<Chambre />} />
+    <ReservationProvider>
+      <FavorisProvider>
+        <Router>
+          <Routes>
+          {/* Tabs */}
+           <Route path="/" element={<Voirtout />} />
+          <Route path="/voir-tout" element={<Voirtout />} />
+          <Route path="/duplex" element={<Duplex />} />
+          <Route path="/villa" element={<Ville />} />
+          <Route path="/appartement" element={<Appartement />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/chambre" element={<Chambre />} />
 
-        {/* menu phone */}
-          <Route path="/reservation" element={<Reservation/>} />
-        <Route path="/favoris" element={<Favoris/>} />
-       <Route path="/message" element={<Message/>} /> 
-         {/* <Route path="/profil "element={<Profil/>} />  */}
+          {/* menu phone */}
+            <Route path="/reservation" element={<Reservation/>} />
+          <Route path="/favoris" element={<Favoris/>} />
+         <Route path="/message" element={<Message/>} /> 
+         <Route path="/profil" element={<Profil/>} /> 
 
-        
-        
-        
-        {/* Detail pages */}
-        <Route path="/Details1" element={<Details1 />} />
-        <Route path="/Details2" element={<Details2 />} />
-        <Route path="/DetailsA" element={<DetailsA />} />
-        <Route path="/DetailsD" element={<DetailsD />} />
-        <Route path="/DetailsV" element={<DetailsV />} />
-        <Route path="/DetailsV1" element={<DetailsV1 />} />
-        <Route path="/DetailsS" element={<DetailsS />} />
-        <Route path="/DetailsS1" element={<DetailsS1 />} />
-        <Route path="/DetailsD1" element={<DetailsD1 />} />
-        <Route path="/DetailsA1" element={<DetailsA1 />} />
-        <Route path="/DetailsC" element={<DetailsC />} />
-        <Route path="/DetailsC1" element={<DetailsC1 />} />
+          
+          
+          
+          {/* Detail pages */}
+          <Route path="/Details1" element={<Details1 />} />
+          <Route path="/Details2" element={<Details2 />} />
+          <Route path="/DetailsA" element={<DetailsA />} />
+          <Route path="/DetailsD" element={<DetailsD />} />
+          <Route path="/DetailsV" element={<DetailsV />} />
+          <Route path="/DetailsV1" element={<DetailsV1 />} />
+          <Route path="/DetailsS" element={<DetailsS />} />
+          <Route path="/DetailsS1" element={<DetailsS1 />} />
+          <Route path="/DetailsD1" element={<DetailsD1 />} />
+          <Route path="/DetailsA1" element={<DetailsA1 />} />
+          <Route path="/DetailsC" element={<DetailsC />} />
+          <Route path="/DetailsC1" element={<DetailsC1 />} />
 
-         
-      </Routes>
-    </Router>
+           
+        </Routes>
+      </Router>
+      </FavorisProvider>
+    </ReservationProvider>
   );
 }
 

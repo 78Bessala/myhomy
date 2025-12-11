@@ -8,8 +8,30 @@ import livre from '../../../assets/public/livre.svg'
 import main from '../../../assets/public/main.svg'
 import Footer from "./Footer"
 import Coeur from "./Coeur"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ReservationContext } from '../../../context/ReservationContext';
+
 function DetailsD (){
+  const { addReservation } = useContext(ReservationContext);
+  const navigate = useNavigate();
+
+  const propertyData = {
+    id: 'DetailsD',
+    image: image,
+    title: "Duplex Meublé",
+    location: "Obili, Yaounde",
+    date: "Mars 2025"
+  };
+
+  const handleReservation = () => {
+    addReservation({
+      ...propertyData,
+      reservedDate: new Date().toLocaleDateString()
+    });
+
+    navigate("/reservation");
+  };
 return(
 <section className='flex flex-col gap-8'> 
       {/* section maison */}
@@ -22,7 +44,7 @@ return(
                         </div>
                   <div className='flex gap-2'>
                         <div className="border border-white text-black bg-[#FFFFFF] text-xs  h-10 w-10 rounded-full flex justify-center items-center"> 
-                               <Coeur/>
+                               <Coeur itemData={propertyData}/>
                         </div>
                         <div className="border border-white text-black bg-[#FFFFFF] text-xs  h-10 w-10 rounded-full flex justify-center items-center"> 
                                 <img  src={download} className='h-6 w-6'/>
@@ -88,7 +110,12 @@ return(
           
         </div>
 <div className='mx-4  justify-center items-center'>
-      <button className=' w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'> Reserver </button>
+      <button 
+        onClick={handleReservation}
+        className='w-10/12 h-12 bg-[#0078EF] mx-6 rounded-[8px] text-base text-white'
+      > 
+        Reserver 
+      </button>
 
 </div>
         
