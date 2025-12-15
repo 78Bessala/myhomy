@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import search from '../../../assets/public/search.svg';
-
+import logo2 from '../../../assets/public/logo2.svg';
 const tabsData = [
   { label: "Voir tout", path: "/voir-tout" },
   { label: "Duplex", path: "/duplex" },
@@ -53,8 +53,9 @@ const Accueil = () => {
 
   return (
     <section className="flex flex-col gap-4 ">
+      {/* <img src={logo2} className="w-[82px] h-[82px] md:hidden"/> */}
       {/* Header */}
-      <header className="mt-10">
+      <header className=" mt-8 md:mt-10">
         <div className="h-16 w-full bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
           <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
             <img src={search} className="w-[24px] h-[24px]" alt="search" />
@@ -67,7 +68,7 @@ const Accueil = () => {
       <div className="sticky top-0 bg-white z-10">
         <nav
           ref={navRef}
-          className="relative flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
+          className="relative text-2xl flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
     /* Pour masquage cross-browser si besoin */
     scrollbarWidth: "none",
      paddingBottom: "6px",// Firefox

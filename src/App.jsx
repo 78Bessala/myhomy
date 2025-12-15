@@ -38,7 +38,7 @@ function App() {
           <Routes>
           {/* Tabs */}
            <Route path="/" element={<Voirtout />} />
-          <Route path="/voir-tout" element={<Voirtout />} />
+          <Route path="/voir-tout" element={<Voirtout />}          />
           <Route path="/duplex" element={<Duplex />} />
           <Route path="/villa" element={<Ville />} />
           <Route path="/appartement" element={<Appartement />} />

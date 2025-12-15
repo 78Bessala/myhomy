@@ -1,6 +1,7 @@
 import Footer from './Footer'
 import { useState } from "react";
  import { FiSearch } from "react-icons/fi";
+ import Footer1 from '../../../composents/pages/Accueil/Footer1';
 import user from '../../../assets/public/user.jpeg';
 const messages = [
   {
@@ -65,7 +66,9 @@ const messages = [
 function Message(){
 const [tab, setTab] = useState("discussions");
     return(
-        <section>
+      // <section className="flex ">
+      //   <Footer1 />
+        <section className='flex flex-col flex-3'>
             <div className="flex flex-col min-h-screen bg-[#D9D9D9]">
       {/* TOP BAR */}
       <div className="bg-blue-600 text-white py-4 px-4 flex items-center justify-between">
@@ -144,9 +147,11 @@ const [tab, setTab] = useState("discussions");
 
      
     </div>
-
-            <Footer/>
+<div className='md:hidden'>
+      <Footer />
+</div>
         </section>
+        // </section>
 
     );
 }

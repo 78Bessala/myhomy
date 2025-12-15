@@ -1,17 +1,18 @@
 
 import Accueil from "./Accueil";
 import image from '../../../assets/public/01.jpg';
-
+import Footer1 from '../../../composents/pages/Accueil/Footer1'
 import etoile from '../../../assets/public/etoile.svg'
 import image1 from '../../../assets/public/02.jpg'
 import image2 from '../../../assets/public/07.jpeg'
 import image3 from '../../../assets/public/06.jpeg'
 import image4 from '../../../assets/public/03.jpg'
 import Footer from "./Footer"
+
 import Coeur from "./Coeur"
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
-//import { FavorisContext } from '../../../composents/pages/Accueil/FavorisContext    ';
+import { FavorisContext } from './FavorisContext';
 
 function Duplex (){
   // Propriétés pour les favoris
@@ -56,16 +57,18 @@ function Duplex (){
   };
 
 return(
+    // <section className="flex gap-1">
+    //     <Footer1 />
     <section className="flex flex-col  gap-4">
         <Accueil/>
-<div className=" flex  flex-col  gap-8  m-4 mb-20">
+<div className=" grid  md:grid-cols-2  md:gap-4 m-4 mb-20">
     {/* image1 */}
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
      
      <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -73,10 +76,10 @@ return(
             </div>
             <Link to="/DetailsD" className="">
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
-                 <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-                  <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
-                   <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
+                <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black bg-[#0078EF]"></div>
+                 <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
+                  <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black  bg-white"></div>
+                   <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
             </div>
             </Link>
         </div>
@@ -107,7 +110,7 @@ return(
         {/* Image */}
 
    <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -115,10 +118,10 @@ return(
             </div>
             <Link to="/DetailsD1" className="">
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
-                 <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-                  <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
-                   <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
+                <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black bg-[#0078EF]"></div>
+                 <div className=" w-2 h-2  md:w-3  md:h-3 rounded-full  border  border-black bg-white"></div>
+                  <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black  bg-white"></div>
+                   <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
             </div>
             </Link>
 </div>
@@ -149,7 +152,7 @@ return(
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -158,10 +161,10 @@ return(
             </div>
             <Link to="/DetailsD" className="">
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
-                 <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-                  <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
-                   <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
+                <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black bg-[#0078EF]"></div>
+                 <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
+                  <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black  bg-white"></div>
+                   <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
             </div>
             </Link>
 
@@ -189,7 +192,7 @@ return(
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -198,10 +201,10 @@ return(
             </div>
             <Link to="/DetailsD" className="">
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
-                 <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-                  <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
-                   <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
+                <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black bg-[#0078EF]"></div>
+                 <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
+                  <div className=" w-2 h-2  md:w-3  md:h-3 rounded-full border  border-black  bg-white"></div>
+                   <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
             </div>
             </Link>
 
@@ -230,7 +233,7 @@ return(
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -238,10 +241,10 @@ return(
             </div>
             <Link to="/DetailsD" className="">
             <div className=" flex gap-1 justify-end">
-                <div className=" w-2 h-2 rounded-full border  border-black bg-[#0078EF]"></div>
-                 <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
-                  <div className=" w-2 h-2 rounded-full border  border-black  bg-white"></div>
-                   <div className=" w-2 h-2 rounded-full  border  border-black bg-white"></div>
+                <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black bg-[#0078EF]"></div>
+                 <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
+                  <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black  bg-white"></div>
+                   <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
             </div>
             </Link>
 
@@ -267,11 +270,14 @@ return(
  
 
 </div>
+<div className="md:hidden">
 
-<Footer/>
+    <Footer/>
+</div>
+
     </section>
 
-
+// </section>
 );
 
 }

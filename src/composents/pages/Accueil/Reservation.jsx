@@ -1,6 +1,7 @@
 import Footer from './Footer';
 import check from '../../../assets/public/check.svg';
 import map from '../../../assets/public/map.svg';
+import Footer1 from '../../../composents/pages/Accueil/Footer1'
 import { useContext } from 'react';
 import { ReservationContext } from '../../../context/ReservationContext';
 
@@ -8,7 +9,9 @@ function Reservation() {
     const { reservations } = useContext(ReservationContext);
 
     return (
-        <section className='flex flex-col gap-4 pt-12    min-h-screen bg-[#D9D9D9]'>
+        // <section className="flex ">
+        // <Footer1 />
+        <section className='flex flex-3 flex-col gap-4 pt-12    min-h-screen bg-[#D9D9D9]'>
 
             <div className='flex flex-col gap-2'>
                 <div className='w-full h-12 bg-[#0078EF] flex justify-center items-center'>
@@ -60,9 +63,12 @@ function Reservation() {
 
                 </div>
             </div>
-
-            <Footer />
-        </section>
+<div className='md:hidden'>
+      <Footer />
+</div>
+          
+        {/* </section> */}
+         </section> 
     );
 }
 

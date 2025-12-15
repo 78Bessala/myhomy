@@ -3,6 +3,7 @@ import heart from '../../../assets/public/heart.svg';
 import etoile from '../../../assets/public/etoile.svg';
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
+import Footer1 from '../../../composents/pages/Accueil/Footer1';
 import { FavorisContext } from '../../../composents/pages/Accueil/FavorisContext';
 
 function Favoris() {
@@ -10,7 +11,9 @@ function Favoris() {
     const { favoris } = useContext(FavorisContext);
 
     return (
-        <section className='flex flex-col gap-4 pt-12 min-h-screen bg-[#D9D9D9]'>
+        // <section className="flex ">
+        // <Footer1 />
+        <section className='flex flex-3 flex-col gap-4 pt-12 min-h-screen bg-[#D9D9D9]'>
 
             <div className='flex flex-col gap-2'>
                 <div className='w-full h-12 bg-[#0078EF] flex justify-center items-center'>
@@ -26,7 +29,7 @@ function Favoris() {
                             <div key={item.id} className='flex flex-col gap-1'>
 
                                 <div
-                                    className="flex flex-col justify-between p-3 w-full h-64 bg-cover bg-center rounded-[16px]"
+                                    className="flex flex-col justify-between p-3 w-full h-44 bg-cover bg-center rounded-[16px]"
                                     style={{ backgroundImage: `url(${item.image})` }}
                                 >
                                     <div className="flex justify-end">
@@ -66,8 +69,11 @@ function Favoris() {
                 </div>
             </div>
 
-            <Footer />
+            <div className='md:hidden'>
+      <Footer />
+</div>
         </section>
+        // </section>
     );
 }
 
