@@ -52,14 +52,14 @@ const Accueil = () => {
   }, [activeTab]);
 
   return (
-    <section className="flex flex-col gap-4 ">
+    <section className="flex flex-col gap-4 m">
       {/* <img src={logo2} className="w-[82px] h-[82px] md:hidden"/> */}
       {/* Header */}
       <header className=" mt-8 md:mt-10">
         <div className="h-16 w-full bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
           <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
             <img src={search} className="w-[24px] h-[24px]" alt="search" />
-            <h1 className="text-xs sm:text-sm md:text-base">Rechercher une ville, une date, un prix</h1>
+            <h1 className="text-xs sm:text-sm md:text-base lg:text-xl">Rechercher une ville, une date, un prix</h1>
           </div>
         </div>
       </header>
@@ -68,7 +68,7 @@ const Accueil = () => {
       <div className="sticky top-0 bg-white z-10">
         <nav
           ref={navRef}
-          className="relative text-2xl flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
+          className="relative text-2xl md:text-3xl flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
     /* Pour masquage cross-browser si besoin */
     scrollbarWidth: "none",
      paddingBottom: "6px",// Firefox
@@ -80,7 +80,7 @@ const Accueil = () => {
               key={tab.label}
               ref={(el) => (buttonsRef.current[tab.label] = el)}
               onClick={() => handleClick(tab)}
-              className={`text-base transition-all px-1 ${
+              className={`text-base lg:text-xl transition-all hover:-translate-y-1 hover:text-gray-700 px-1 ${
                 activeTab === tab.label ? "text-[#0078EF] font-semibold" : "text-black"
               }`}
             >

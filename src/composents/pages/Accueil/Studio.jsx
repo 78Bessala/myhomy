@@ -59,7 +59,7 @@ function Studio (){
 return(
     <section className="flex flex-col  gap-4">
         <Accueil/>
-<div className=" grid  md:grid-cols-2  md:gap-4 m-4 mb-20">
+<div className=" grid  md:grid-cols-2  md:gap-8 lg:gap-12 m-4 mb-20">
     {/* image1 */}
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
@@ -88,15 +88,15 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Odza ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juillet 2025</h2>
-                 <h2 className="text-xs  text-black "> 60.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black md:text-base lg:text-xl "> Odza ,Yaounde</h1>
+                <h2 className="text-xs  text-black md:text-sm  lg:text-base "> A partir de juillet 2025</h2>
+                 <h2 className="text-xs  text-black md:text-sm  lg:text-base"> 60.000/mois</h2>
             </div>
 
 
             <div className="flex  gap-1">
-                <img src={etoile}  className="w-4 h-4 mt-1 "/>
-                <h1 className="text-[15px] text-black">5.0</h1>
+                <img src={etoile}  className="w-4 h-4 mt-1 md:w-5 md:h-5 "/>
+                <h1 className="text-[15px] text-black md:text-xl">5.0</h1>
             </div>
         </div>
  
@@ -133,15 +133,15 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Village ,Douala</h1>
-                <h2 className="text-xs  text-black "> A partir de Novembre 2025</h2>
-                 <h2 className="text-xs  text-black "> 50.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black md:text-base lg:text-xl "> Village ,Douala</h1>
+                <h2 className="text-xs  text-black md:text-sm  lg:text-base "> A partir de Novembre 2025</h2>
+                 <h2 className="text-xs  text-black  md:text-sm  lg:text-base"> 50.000/mois</h2>
             </div>
 
 
             <div className="flex  gap-1">
-                <img src={etoile}  className="w-4 h-4 mt-1 "/>
-                <h1 className="text-[15px] text-black">5.0</h1>
+                <img src={etoile}  className="w-4 h-4 mt-1 md:w-5 md:h-5 "/>
+                <h1 className="text-[15px] text-black md:text-xl">5.0</h1>
             </div>
         </div> 
 </div>
@@ -172,15 +172,15 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Obili ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
-                 <h2 className="text-xs  text-black "> 70.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black  md:text-base lg:text-xl"> Obili ,Yaounde</h1>
+                <h2 className="text-xs  text-black md:text-sm  lg:text-base"> A partir de juin 2025</h2>
+                 <h2 className="text-xs  text-black md:text-sm  lg:text-base"> 70.000/mois</h2>
             </div>
 
 
             <div className="flex  gap-1">
-                <img src={etoile}  className="w-4 h-4 mt-1 "/>
-                <h1 className="text-[15px] text-black">4.8</h1>
+                <img src={etoile}  className="w-4 h-4 mt-1 md:w-5 md:h-5 "/>
+                <h1 className="text-[15px] text-black md:text-xl">4.8</h1>
             </div>
         </div>
    </div>
@@ -210,21 +210,20 @@ return(
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Nsam ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de mai 2023</h2>
-                 <h2 className="text-xs  text-black "> 75.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black md:text-base lg:text-xl "> Nsam ,Yaounde</h1>
+                <h2 className="text-xs  text-black  md:text-sm  lg:text-base"> A partir de mai 2023</h2>
+                 <h2 className="text-xs  text-black md:text-sm  lg:text-base"> 75.000/mois</h2>
             </div>
 
 
             <div className="flex  gap-1">
-                <img src={etoile}  className="w-4 h-4 mt-1 "/>
-                <h1 className="text-[15px] text-black">4.7</h1>
+                <img src={etoile}  className="w-4 h-4 mt-1 md:w-5 md:h-5"/>
+                <h1 className="text-[15px] text-black md:text-xl">4.7</h1>
             </div>
         </div>
    </div>
- 
 
-           {/* image5 */}
+    {/* image5 */}
            <div className=" flex flex-col gap-2">
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
@@ -233,35 +232,39 @@ return(
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
-            <Coeur itemData={prop5}/>	
-             </div>
+            <Coeur itemData={prop4}/>
+                     {/*<img  src={coeur1} className=" w-[24px] h-[24px] "/>*/}
+            </div>
             <div className=" flex gap-1 justify-end">
                 <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black bg-[#0078EF]"></div>
-                 <div className=" w-2 h-2  md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
-                  <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full border  border-black  bg-white"></div>
-                   <div className=" w-2 h-2 md:w-3  md:h-3   rounded-full  border  border-black bg-white"></div>
+                 <div className=" w-2 h-2 md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
+                  <div className=" w-2 h-2 md:w-3  md:h-3 rounded-full border  border-black  bg-white"></div>
+                   <div className=" w-2 h-2  md:w-3  md:h-3  rounded-full  border  border-black bg-white"></div>
             </div>
 
-         </div>
+        </div>  </div>
      {/* sous titre de l'image */}
         <div className="mx-2 flex  justify-between">
 
             <div>
 
-                <h1 className="font-bold  text-sm text-black "> Bastos ,Yaounde</h1>
-                <h2 className="text-xs  text-black "> A partir de juin 2025</h2>
-                 <h2 className="text-xs  text-black "> 1.000.000/mois</h2>
+                <h1 className="font-bold  text-sm text-black md:text-base lg:text-xl "> Bastos ,Yaounde</h1>
+                <h2 className="text-xs  text-black  md:text-sm  lg:text-base"> A partir de juin 2025</h2>
+                 <h2 className="text-xs  text-black md:text-sm  lg:text-base"> 80.000/mois</h2>
             </div>
 
 
             <div className="flex  gap-1">
-                <img src={etoile}  className="w-4 h-4 mt-1 "/>
-                <h1 className="text-[15px] text-black">4.0</h1>
+                <img src={etoile}  className="w-4 h-4 mt-1 md:w-5 md:h-5"/>
+                <h1 className="text-[15px] text-black md:text-xl">4.7</h1>
             </div>
         </div>
    </div>
  
- </div>
+
+         
+ 
+ 
 
 </div>
 
