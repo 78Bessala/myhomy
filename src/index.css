@@ -70,3 +70,27 @@ button:focus-visible {
 @tailwind components;
 @tailwind utilities;
 
+#util{
+  display: none;
+
+}
+/* #logo{
+ display: none;
+} */
+
+
+
+@media (min-width:600px) {
+  #util{
+  
+  display:flex;
+  }
+}
+
+/* @media (min-width:320px) {
+  #logo{
+  
+  display:block;
+  }
+} */
+
