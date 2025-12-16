@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 
 const Pass = () => {
   return (
-    <div className="min-h-screen bg-[#EAE6F4]">
-
-      {/* Flèche + Header bleu */}
-      <div className="bg-[#A3D2FF]">
+    <div className=" h-screen bg-[#A3D2FF] flex  flex-col gap-6">
 
         {/* Flèche retour */}
         <Link to="/login">
@@ -17,22 +14,26 @@ const Pass = () => {
         </div>
 
         </Link>
-        
+      {/* Flèche + Header bleu */}
+     
+
         {/* Logo */}
         <div className="flex justify-center items-center h-56">
           <img
             src={logo}
             alt="logo"
-            className="w-28 h-28 object-contain"
+            className="w-48 h-48 object-contain"
           />
         </div>
-      </div>
+
+
+     
 
       {/* Container bleu clair, arrondi seulement en haut */}
-      <div className="bg-[#EAE6F4] -mt-10 rounded-t-3xl p-6">
+      <div className=" h-full bg-[#EAE6F4]  rounded-t-3xl p-6">
 
         {/* Titre */}
-        <h2 className="text-center text-xl font-bold mb-2">
+        <h2 className="text-center text-2xl font-bold mb-2">
           Mot de passe oublié?
         </h2>
 
@@ -41,31 +42,35 @@ const Pass = () => {
         </p>
 
         {/* Label */}
-        <label className="block text-sm font-medium mb-2 text-black">
+        <label className="block text-sm font-medium m-2 text-black">
           Adresse mail
         </label>
 
-        {/* Input email */}
+    <div>
+
+       {/* Input email */}
         <input
           type="email"
           placeholder="Entrer votre adresse email"
-          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#203D89] mb-6"
+          className="w-full pl-4 items-center border border-[#989393] h-[48px] rounded-[10px] focus:outline-none focus:ring-2 focus:ring-[#203D89] mb-6"
         />
 
         {/* Button */}
-        <button className="w-full bg-[#203D89] text-white py-3 rounded-lg text-sm font-semibold hover:bg-[#1A326F] transition-colors">
+        <button className="w-full bg-[#203D89] h-[48px]  flex items-center  justify-center text-white rounded-[10px] text-sm font-semibold hover:bg-[#1A326F] transition-colors">
           <Link to="/verification">Envoyer le code</Link>
           
         </button>
 
+    </div>
+       
         {/* Retour login */}
-        <div className="flex items-center text-xs text-gray-600 mt-10 cursor-pointer">
+        <div className="flex items-center  mt-8  gap-1 text-xs text-gray-600  cursor-pointer">
           <span className="text-lg mr-1">
             <FaArrowLeftLong />
           </span>
             Retourner sur{" "}
             <Link to="/login" className="hover:underline">
-            <span className="text-[#203D89] font-medium">se connecter</span>
+            <span className="text-[#203D89] font-bold">se connecter</span>
           </Link>
         </div>
 

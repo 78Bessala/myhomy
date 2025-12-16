@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Welcomme = () => {
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center flex flex-col justify-center items-center px-6"
+      className="relative min-h-screen bg-cover bg-center flex flex-col gap-6 justify-center items-center px-6"
       style={{
         backgroundImage: `url(${homes})`,
       }}
@@ -17,13 +17,14 @@ const Welcomme = () => {
       <img
         src={Frame}
         alt="logo"
-        className="w-28 h-28 md:w-40 md:h-40 object-contain mb-6"
+        className="w-48 h-48 md:w-40 md:h-40 object-contain mb-6"
       />
 
-      {/* TEXTE */}
-      <p className="text-white text-2xl md:text-3xl font-bold text-center mb-10">
-        Votre assistant IA pour un <br /> enregistrement légal
-      </p>
+      <div className="">
+        {/* TEXTE */}
+      <h1 className="text-white text-xs md:text-3xl  text-center mb-2">
+        Votre assistant IA pour un enregistrement légal
+      </h1>
 
       {/* BOUTON SE CONNECTER */}
       <button
@@ -39,6 +40,8 @@ const Welcomme = () => {
       >
         <Link to="/register" className="hover:text-blue-800">S’inscrire</Link>
       </button>
+      </div>
+      
 
     </div>
   );

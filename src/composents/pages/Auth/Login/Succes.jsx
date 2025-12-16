@@ -18,7 +18,7 @@ const Succes = () => {
           <img
             src={logo}
             alt="logo"
-            className="w-24 h-24 object-contain mb-[-12px]"
+            className="w-48 h-48 object-contain mb-[-12px]"
           />
 
           {/* Frame34 en dessous */}
@@ -59,7 +59,7 @@ const Succes = () => {
 
       {/* Bouton */}
       <div className="px-6 mt-auto pb-10">
-        <button className="w-full bg-[#203D89] text-white py-3 rounded-lg text-sm font-semibold hover:bg-[#36148A] transition-colors">
+        <button className="w-full bg-[#203D89] text-white py-3 rounded-[10px] text-sm font-semibold hover:bg-[#36148A] transition-colors">
           <Link to="#">Continuer</Link>
         </button>
       </div>
