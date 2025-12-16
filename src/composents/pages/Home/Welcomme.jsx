@@ -28,15 +28,15 @@ const Welcomme = () => {
 
       {/* BOUTON SE CONNECTER */}
       <button
-        className="w-full max-w-xs bg-[#203D89] text-white py-3 rounded-full text-lg font-medium mb-4"
+        className="w-full max-w-xs bg-[#203D89] text-white py-3 rounded-full text-lg font-medium mb-4 hover:bg-blue-800 hover:-translate-y-1"
       >
-        <Link to="/login" className="hover:bg-[#1A2D5F] transition-colors">Se connecter</Link>
+        <Link to="/login" className=" transition-colors">Se connecter</Link>
         
       </button>
 
       {/* BOUTON S’INSCRIRE TRANSPARENT */}
       <button
-        className="w-full max-w-xs border border-white text-white py-3 rounded-full text-lg font-medium bg-transparent"
+        className="w-full max-w-xs border border-white text-white py-3 rounded-full text-lg font-medium bg-transparent hover:-translate-y-1 "
       >
         <Link to="/register" className="hover:text-blue-800">S’inscrire</Link>
       </button>

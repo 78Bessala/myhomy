@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import logo from "../../../../images/logo.svg";
 import utilitaire from "../../../../images/utilitaire.jpeg";
 import { FcGoogle } from "react-icons/fc";
@@ -6,68 +7,117 @@ import { FaFacebook, FaApple } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { BsEyeSlash } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import bg3 from '../../../../assets/public/s4.jpg'
+import bg4 from '../../../../assets/public/03.jpg'
+import bg1 from '../../../../assets/public/v2.jpg'
+import bg2 from '../../../../assets/public/v3.jpg'
+import logo3 from '../../../../assets/public/logo3.svg'
+
+const backgrounds = [bg1, bg2, bg3,bg4];
 
 const Login = () => {
-  return (
-    <section className="">
+ 
 
-      <section className="hidden md:flex  " id="util"  >
-        <div className="relative w-full h-64">
-          {/* Background */}
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${utilitaire})` }}
-          />
+    const [index, setIndex] = useState(0);
 
-          {/* Logo centré */}
-          <img
-            src={logo}
-            alt="logo"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          />
-        </div>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % backgrounds.length);
+    }, 4000); // change toutes les 4 secondes
 
-      </section>
+    return () => clearInterval(interval);
+  }, []);
+
+    return (
+<main className="h-screen flex items-center justify-center  md:p-16 bg-gray-100 overflow-hidden">
+
+      <section className="
+        w-full
+        h-full
+        max-w-7xl
+        flex
+        gap-4
+        md:rounded-2xl
+        bg-white
+         md:p-8
+        shadow-2xl
+        overflow-hidden
+      ">
+        <section id="bord"
+          className="
+            flex-1
+            h-full
+            bg-cover
+            bg-center
+            transition-all
+            duration-700
+            relative
+            flex
+            items-center
+            justify-center
+            rounded-xl
+            overflow-hidden
+            
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0.8, 0.8)
+              ),
+              url(${backgrounds[index]})
+            `,
+          }}
+        >
+          <Link to="/welcomme" className="absolute top-4 left-4 text-white text-2xl">
+            <FaArrowLeftLong />
+          </Link>
+
+          <img src={logo3} alt="logo" className="w-56 h-56" />
+        </section>
+
+
+      {/*ghcgfgfjf  */}
 
 
 
 
 
-
-      <div className="h-screen bg-[#A3D2FF] flex  gap-1 flex-col md:flex-row">
-
+      <div className=" bg-[#A3D2FF]  md:bg-[#EBEBF2] flex  gap-12 md:gap-0 flex-col md:flex-row flex-1 md:rounded-xl">
 
 
-        <div className="bg-[#A3D2FF] md:hidden">
+
+        <div className="bg-[#A3D2FF] flex  gap-4   overflow-x-hidden">
 
           {/* Flèche retour */}
           <Link to="/welcomme">
-            <div className="px-4 pt-4 text-black text-2xl cursor-pointer">
+            <div className="px-4 pt-4 text-black text-2xl cursor-pointer md:hidden">
               <FaArrowLeftLong />
             </div>
           </Link>
 
           {/* Logo */}
-          <div className="flex justify-center items-center h-56">
+          <div className="flex justify-center items-center h-80">
             <img
               src={logo}
               alt="logo"
-              className="w-48 h-48 object-contain"
+              className="w-56 h-56  object-contain md:hidden"
             />
           </div>
         </div>
 
         {/* Formulaire */}
-        <div className="w-full  h-full max-w-md bg-[#EBEBF2] -mt-10 rounded-t-3xl p-6">
+        <div className="w-full md:rounded-xl  h-full md:max-w-full  flex  flex-col gap-4 md:gap-8 lg:gap-12 md:min-h-full  bg-[#EBEBF2]   rounded-t-3xl md:rounded-[1px]  p-6 lg:p-12">
 
           {/* Titre */}
           <h2 className="text-center text-3xl font-bold mb-6">se connecter</h2>
-          <div className="flex flex-col 5173gap-4">
+          <div className="flex flex-col gap-4">
             {/* Boutons de connexion */}
-            <div className="flex justify-between  m-4 mb-4 text-3xl">
-              <FcGoogle className="cursor-pointer" />
-              <FaFacebook className="text-blue-600 cursor-pointer" />
-              <FaApple className="cursor-pointer" />
+            <div className="flex justify-between  lg:mx-12 m-4 mb-4 text-3xl">
+              <FcGoogle className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 " />
+              <FaFacebook className="text-blue-600 cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10" />
+              <FaApple className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10" />
             </div>
 
             {/* Ligne "ou avec" */}
@@ -146,7 +196,7 @@ const Login = () => {
       </div>
     </section>
 
-
+</main>
   );
 };
 

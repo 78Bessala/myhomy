@@ -60,7 +60,7 @@ function App() {
         <Route path="/" element={<Welcomme />} />
 
         {/* Autres pages */}
-        <Route path="/welcomme" element={<Welcomme />} />
+        <Route path="/welcome" element={<Welcomme />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot" element={<Pass/>}></Route>

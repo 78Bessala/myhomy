@@ -4,6 +4,7 @@ import search from '../../../assets/public/search.svg';
 import logo2 from '../../../assets/public/logo2.svg';
 import logo from '../../../assets/public/logo.svg'
 import menu from '../../../assets/public/menu.svg'
+import { Link } from 'react-router-dom'
 const tabsData = [
   { label: "Voir tout", path: "/voir-tout" },
   { label: "Duplex", path: "/duplex" },
@@ -54,27 +55,32 @@ const Accueil = () => {
   }, [activeTab]);
 
   return (
-    <section className="flex flex-col gap-4 mt-2">
-      {/* <div className="flex justify-between m-4">
-        <img src={logo} className="w-[42px] h-[42px] md:hidden"/>
-         <img src={search} className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]" alt="search" />
-         <img src={menu} className="w-[24px] h-[24px] md:hidden"/>
+    <section className="flex flex-col  md:gap-4 mt-2">
+      <div className="flex justify-between mx-4 mt-4">
+        <img src={logo2} className="w-[48x] h-[38px] md:hidden"/>
+         {/* <img src={search} className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]" alt="search" /> */}
+         <Link to="/welcome" className=""><img src={menu} className="w-[24px] h-[24px] md:hidden"/></Link> 
       </div>
-       */}
+      
       {/* Header */}
       <div id='bouton' className="flex  gap-4 justify-end  mt-4 mx-4">
+       <Link to="/register" className="">
       <button  
           
           className=' w-32  lg:w-52 h-8  lg:h-10 bg-[#0078EF] rounded-[8px] text-base lg:text-xl text-white'
         >
           S'inscrire
         </button>
+        </Link>
+
+          <Link to="/login" className="">
         <button 
           
           className=' w-32 lg:w-52 h-8  lg:h-10  border border-[#0078EF] rounded-[8px] text-base lg:text-xl text-[#0078EF] '
         >
           se connecter 
         </button>
+        </Link>
         </div>
 
       <header className=" mt-1  flex justify-center ">
@@ -103,7 +109,7 @@ const Accueil = () => {
               key={tab.label}
               ref={(el) => (buttonsRef.current[tab.label] = el)}
               onClick={() => handleClick(tab)}
-              className={`text-base lg:text-xl lg:gap-12 transition-all hover:-translate-y-1 hover:text-gray-700 px-1 ${
+              className={`text-base lg:text-xl  transition-all hover:-translate-y-1 hover:text-gray-700 px-1 ${
                 activeTab === tab.label ? "text-[#0078EF] font-semibold" : "text-black"
               }`}
             >
