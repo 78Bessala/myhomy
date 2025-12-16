@@ -26,6 +26,8 @@ import { FavorisProvider } from './composents/pages/Accueil/FavorisContext';
 import Favoris from './composents/pages/Accueil/Favoris';
 import Message from './composents/pages/Accueil/Message'
 import Profil from './composents/pages/Accueil/Profil'
+import Footer1 from './composents/pages/Accueil/Footer1'
+import Layout from './composents/pages/Accueil/Layout'
 // import '../../../index.css';
 
 
@@ -36,8 +38,10 @@ function App() {
       <FavorisProvider>
         <Router>
           <Routes>
+
+             <Route element={<Layout />} /> 
           {/* Tabs */}
-           <Route path="/" element={<Voirtout />} />
+           <Route path="/" element={<Voirtout /> } />
           <Route path="/voir-tout" element={<Voirtout />}          />
           <Route path="/duplex" element={<Duplex />} />
           <Route path="/villa" element={<Ville />} />

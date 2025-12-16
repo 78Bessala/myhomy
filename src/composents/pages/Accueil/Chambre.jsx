@@ -12,6 +12,7 @@ import Coeur from "./Coeur"
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { FavorisContext } from './FavorisContext';
+import Footer1 from './Footer1'
 
 function Chambre (){
   // Propriétés pour les favoris
@@ -56,15 +57,21 @@ function Chambre (){
   };
 
 return(
-    <section className="flex flex-col  gap-4">
+     <section className="flex h-screen    overflow-x-hidden">
+
+       <Footer1 />
+         
+        
+        <main className="flex flex-3 flex-col flex-1 max-w-full gap-4">
+
         <Accueil/>
-<div className=" grid  md:grid-cols-2  md:gap-8 lg:gap-12 m-4 mb-20">
-    <div className=" flex flex-col gap-2">
+<div className=" grid gap-4 md:grid-cols-2  md:gap-8 lg:gap-12 m-4 mb-20 lg:mx-12 lg:m-8">
+    
         <div className=" flex flex-col   items-center  ">
         {/* Image */}
    
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64  md:h-86 lg:h-96 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full  h-64  md:h-80 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -83,7 +90,7 @@ return(
         </div> 
         
      {/* sous titre de l'image */}
-        <div className="mx-2 flex gap-46 justify-between">
+        <div className="mx-2 flex gap-4 justify-between">
 
             <div>
 
@@ -110,7 +117,7 @@ return(
         {/* Image */}
 
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-80 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image1})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -153,7 +160,7 @@ return(
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-80 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image2})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -191,7 +198,7 @@ return(
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-80 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image3})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -230,7 +237,7 @@ return(
 <div className=" flex flex-col   items-center  ">
         {/* Image */}
     <div
-          className="  flex flex-col justify-between p-3 w-full h-64 md:h-84 lg:h-96 bg-cover bg-center rounded-[16px]"
+          className="  flex flex-col justify-between p-3 w-full h-64 md:h-80 lg:h-96 bg-cover bg-center rounded-[16px]"
           style={{ backgroundImage: `url(${image4})` }}>
             <div className="flex justify-between"> 
                     <div className="border border-white text-black bg-[#A3D2FF] text-xs  h-[30px] w-[130px] rounded-[30px] flex justify-center items-center"> ajouter aux favoris</div>
@@ -245,7 +252,7 @@ return(
 
        </div>
      {/* sous titre de l'image */}
-        <div className=" flex  gap-40 mx-2 justify-between">
+        <div className=" flex  gap-4 mx-2 justify-between">
 
             <div>
 
@@ -262,13 +269,16 @@ return(
         </div>
    </div>
  
- </div>
+ 
 
 </div>
 </div>
 
 <Footer/>
-    </section>
+    </main>
+        
+     </section>
+   
 
 
 );

@@ -12,6 +12,25 @@ body {
  --primary: #0078EF;
 }
 
+/* Fichier CSS externe */
+
+#footer1{
+    /* 1. Masquage par défaut (Mobile First) */
+    display: none;
+}
+
+/* 2. Media Query pour l'affichage sur Desktop (624px et plus) */
+@media (min-width: 624px) {
+    #footer1 {
+        display: flex; 
+        /* position: fixed;  */
+        /* top: 0;
+        left: 0; */
+        height: 100vh; 
+        width: 256px; /* w-64 en Tailwind */
+        
+    }
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

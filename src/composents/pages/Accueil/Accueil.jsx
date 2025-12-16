@@ -56,9 +56,9 @@ const Accueil = () => {
       {/* <img src={logo2} className="w-[82px] h-[82px] md:hidden"/> */}
       {/* Header */}
       <header className=" mt-8 md:mt-10">
-        <div className="h-16 w-full bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
-          <div className="h-8 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
-            <img src={search} className="w-[24px] h-[24px]" alt="search" />
+        <div className="h-16 w-full lg:h-20 bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
+          <div className="h-8 lg:h-10 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
+            <img src={search} className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]" alt="search" />
             <h1 className="text-xs sm:text-sm md:text-base lg:text-xl">Rechercher une ville, une date, un prix</h1>
           </div>
         </div>
@@ -68,7 +68,7 @@ const Accueil = () => {
       <div className="sticky top-0 bg-white z-10">
         <nav
           ref={navRef}
-          className="relative text-2xl md:text-3xl flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
+          className=" md:flex md:justify-center relative text-2xl md:text-3xl flex gap-8 p-4  font-body  overflow-x-auto whitespace-nowrap scrollbar-hide" style={{
     /* Pour masquage cross-browser si besoin */
     scrollbarWidth: "none",
      paddingBottom: "6px",// Firefox

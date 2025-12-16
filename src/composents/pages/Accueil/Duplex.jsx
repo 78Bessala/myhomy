@@ -7,7 +7,8 @@ import image1 from '../../../assets/public/02.jpg'
 import image2 from '../../../assets/public/07.jpeg'
 import image3 from '../../../assets/public/06.jpeg'
 import image4 from '../../../assets/public/03.jpg'
-import Footer from "./Footer"
+import Footer from "./Footer";
+
 
 import Coeur from "./Coeur"
 import { Link } from "react-router-dom";
@@ -57,11 +58,14 @@ function Duplex (){
   };
 
 return(
-    // <section className="flex gap-1">
-    //     <Footer1 />
-    <section className="flex flex-col  gap-4">
+     <section className="flex h-screen    overflow-x-hidden">
+
+       <Footer1 />
+         
+        
+        <main className="flex flex-3 flex-col flex-1 max-w-full gap-4">
         <Accueil/>
-<div className=" grid  md:grid-cols-2  md:gap-8 lg:gap-12 m-4 mb-20">
+<div className=" grid  md:grid-cols-2  md:gap-8 lg:gap-12 m-4 mb-20 lg:mx-12 lg:m-8">
     {/* image1 */}
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
@@ -274,12 +278,11 @@ return(
 
     <Footer/>
 </div>
-
+</main>
     </section>
 
-// </section>
 );
 
 }
 
-export default Duplex
+export default Duplex;

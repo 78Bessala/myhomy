@@ -8,15 +8,12 @@ import message1 from '../../../assets/public/message1.svg';
 import message from '../../../assets/public/message.svg';
 import profil from '../../../assets/public/profil.svg';
 import profil1 from '../../../assets/public/profil1.svg';
-import logo2 from '../../../assets/public/logo2.svg'
-import { useLocation } from 'react-router-dom';
-
-import { Link } from "react-router-dom";
+import logo2 from '../../../assets/public/logo2.svg';
+import { useLocation, Link } from 'react-router-dom';
 
 function Footer1() {
   const location = useLocation();
-  
-  // Déterminer l'item actif en fonction de la route
+
   const getActiveItem = () => {
     const path = location.pathname;
     if (path.includes('voir-tout') || path === '/') return 'Maison';
@@ -30,87 +27,87 @@ function Footer1() {
   const activeItem = getActiveItem();
 
   return (
-    <section className="hidden lg:flex flex-1 flex-col p-8 pt-24 lg:pt-6 gap-12 bg-blue-100 w-11/12">
+    <aside
+      className="
+    flex  flex-1
+        w-[280px] lg:w-
+        flex-shrink-0
+        h-screen
+        sticky top-0
+        flex-col
+        gap-10
+        bg-blue-100
+        px-6
+        pt-6
+        md:overflow-y-hidden
+      " id="footer1"
+    >
+      {/* LOGO */}
+      <img
+        src={logo2}
+        alt="logo"
+        className="w-full  md:max-w-[120px] lg:max-w-[300px] lg:h-[100px] mx-auto mb-6"
+      />
 
-     <img src={logo2} className='mt-6 lg:w-[286px] lg:h-[286px] mt-2'/>
-
-      <div className="flex  flex-col  gap-12 lg:gap-32 justify-between mx-4 ">
-
+      {/* MENU */}
+      <nav className="flex flex-col  justify-center  lg:mx-24  gap-10">
         {/* Maison */}
-        <div 
-          className="flex  gap-6 items-center cursor-pointer"
-        >
-           <Link to="/voir-tout" className="">
-          <img 
-            src={activeItem === 'Maison' ? home1 : home} 
-            className=" w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]"
+        <Link to="/voir-tout" className="flex items-center gap-6">
+          <img
+            src={activeItem === 'Maison' ? home1 : home}
+            className="w-10 h-10"
           />
-          </Link>
-          <h1 className={`text-base lg:text-2xl ${activeItem === 'Maison' ? 'text-[#0078EF]' : ''}`}>
+          <span className={`text-xl ${activeItem === 'Maison' ? 'text-[#0078EF]' : ''}`}>
             Maison
-          </h1>
-        </div>
+          </span>
+        </Link>
 
         {/* Reservation */}
-        <div 
-          className="flex  gap-6 items-center cursor-pointer"
-        >
-           <Link to="/reservation" className="">
-          <img 
-            src={activeItem === 'Reservation' ? reservation1 : reservation} 
-            className=" w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]"
-          /></Link>
-          <h1 className={` lg:text-2xl ${activeItem === 'Reservation' ? 'text-[#0078EF]' : ''}`}>
+        <Link to="/reservation" className="flex items-center gap-6">
+          <img
+            src={activeItem === 'Reservation' ? reservation1 : reservation}
+            className="w-10 h-10"
+          />
+          <span className={`text-xl ${activeItem === 'Reservation' ? 'text-[#0078EF]' : ''}`}>
             Reservation
-          </h1>
-        </div>
+          </span>
+        </Link>
 
         {/* Favoris */}
-        <div 
-          className="flex  gap-6 items-center cursor-pointer"
-        >
-          <Link to="/favoris" className="">
-          <img 
+        <Link to="/favoris" className="flex items-center gap-6">
+          <img
             src={activeItem === 'Favoris' ? favoris1 : favoris}
-            className=" w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]"
+            className="w-10 h-10"
           />
-          </Link>
-          <h1 className={` lg:text-2xl ${activeItem === 'Favoris' ? 'text-[#0078EF]' : ''}`}>
+          <span className={`text-xl ${activeItem === 'Favoris' ? 'text-[#0078EF]' : ''}`}>
             Favoris
-          </h1>
-        </div>
+          </span>
+        </Link>
 
         {/* Messages */}
-        <div 
-          className="flex  gap-6 items-center cursor-pointer"
-        >
-          <Link to="/message" className="">
-          <img 
-             src={activeItem === 'Messages' ? message : message1} 
-            className="w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]"
+        <Link to="/message" className="flex items-center gap-6">
+          <img
+            src={activeItem === 'Messages' ? message : message1}
+            className="w-10 h-10"
           />
-          </Link>
-          <h1 className={` lg:text-2xl ${activeItem === 'Messages' ? 'text-[#0078EF]' : ''}`}>
+          <span className={`text-xl ${activeItem === 'Messages' ? 'text-[#0078EF]' : ''}`}>
             Messages
-          </h1>
-        </div>
+          </span>
+        </Link>
 
         {/* Profil */}
-        <div 
-          className="flex  gap-6 items-center cursor-pointer"
-        >
-           <Link to="/profil" className="">
-          <img 
-             src={activeItem === 'Profil' ? profil1 : profil}
-            className="w-[36px] h-[36px] lg:w-[48px] lg:h-[48px]"
-          /></Link>
-          <h1 className={` lg:text-2xl ${activeItem === 'Profil' ? 'text-[#0078EF]' : ''}`}>
+        <Link to="/profil" className="flex items-center gap-6">
+          <img
+            src={activeItem === 'Profil' ? profil1 : profil}
+            className="w-10 h-10"
+          />
+          <span className={`text-xl ${activeItem === 'Profil' ? 'text-[#0078EF]' : ''}`}>
             Profil
-          </h1>
-        </div>
-      </div>
-    </section>
+          </span>
+        </Link>
+      </nav>
+    </aside>
   );
- }
+}
 
 export default Footer1;

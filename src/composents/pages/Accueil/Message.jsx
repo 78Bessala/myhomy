@@ -66,33 +66,36 @@ const messages = [
 function Message(){
 const [tab, setTab] = useState("discussions");
     return(
-      // <section className="flex ">
-      //   <Footer1 />
-        <section className='flex flex-col flex-3'>
+      <section className="flex h-screen    overflow-x-hidden">
+
+       <Footer1 />
+         
+        
+        <main className="flex flex-3 flex-col flex-1 pt-12  max-w-full gap-4 min-h-screen bg-[#D9D9D9]">
             <div className="flex flex-col min-h-screen bg-[#D9D9D9]">
       {/* TOP BAR */}
-      <div className="bg-blue-600 text-white py-4 px-4 flex items-center justify-between">
-        <h1 className="text-xl font-semibold">Messagerie</h1>
-        <div className="text-2xl">⋮</div>
+      <div className="bg-blue-600 text-white py-4 px-4 lg:px-8 flex items-center justify-between">
+        <h1 className="text-xl font-semibold lg:text-2xl">Messagerie</h1>
+        <div className="text-2xl lg:text-bold lg:text-3xl">⋮</div>
       </div>
 
       {/* SEARCH BAR */}
-      <div className="px-4 mt-3">
-        <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm">
-          <FiSearch className="text-gray-500 text-lg" />
+      <div className="px-4 mt-3  md:mt-6 lg:mt-8 lg:m-8">
+        <div className="flex items-center bg-white rounded-full px-4 py-2 lg:h-12 shadow-sm">
+          <FiSearch className="text-gray-500 text-lg lg:h-6 lg:w-6" />
           <input
             type="text"
             placeholder="Rechercher un message"
-            className="ml-3 flex-1 outline-none bg-transparent text-sm"
+            className="ml-3 flex-1 outline-none bg-transparent text-sm lg:text-lg"
           />
         </div>
       </div>
 
       {/* TABS */}
-      <div className="flex justify-around mt-4 px-4">
+      <div className="flex justify-around mt-4 px-4  lg:mt-0 lg:m-6">
         <button
           onClick={() => setTab("discussions")}
-          className={`px-6 py-2 rounded-full border border-1 cursor-pointer ${
+          className={`px-6 py-2 rounded-full border border-1 cursor-pointer lg:h-12 lg:w-48 lg:text-lg ${
             tab === "discussions"
               ? "bg-blue-400  shadow font-semibold"
               : "bg-transparent"
@@ -103,7 +106,7 @@ const [tab, setTab] = useState("discussions");
 
         <button
           onClick={() => setTab("notifications")}
-          className={`px-6 py-2 rounded-full border cursor-pointer ${
+          className={`px-6 py-2 rounded-full border cursor-pointer lg:h-12 lg:w-48 lg:text-lg ${
             tab === "notifications"
               ? "bg-white shadow font-semibold"
               : "bg-transparent"
@@ -114,7 +117,7 @@ const [tab, setTab] = useState("discussions");
       </div>
 
       {/* MESSAGE LIST */}
-      <div className="flex-1 mt-4 overflow-y-auto px-4 pb-20">
+      <div className="flex-1 mt-4 overflow-y-auto px-4 pb-20  md:mt-6 lg:mt-8 lg:mx-16">
         {messages.map((m) => (
           <div key={m.id} className="flex items-center gap-3 mb-5">
             {/* IMAGE */}
@@ -136,10 +139,10 @@ const [tab, setTab] = useState("discussions");
             {/* TEXT */}
             <div className="flex-1 border-b border-gray-300 pb-2">
               <div className="flex justify-between">
-                <p className="font-semibold text-sm">{m.name}</p>
-                <span className="text-xs text-gray-600">{m.time}</span>
+                <p className="font-semibold text-sm md:text-lg lg:text-xl">{m.name}</p>
+                <span className="text-xs text-gray-600 md:text-sm lg:text-lg">{m.time}</span>
               </div>
-              <p className="text-gray-700 text-xs">{m.msg}</p>
+              <p className="text-gray-700 text-xs md:text-sm lg:text-lg">{m.msg}</p>
             </div>
           </div>
         ))}
@@ -147,11 +150,12 @@ const [tab, setTab] = useState("discussions");
 
      
     </div>
-<div className='md:hidden'>
+
       <Footer />
-</div>
+
+</main>
         </section>
-        // </section>
+      
 
     );
 }

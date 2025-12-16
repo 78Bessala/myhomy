@@ -58,11 +58,14 @@ function Voirtout (){
   };
 
 return(
-    // <section className="flex">
-       
-    <section className="flex flex-1 flex-col  gap-4">
+    <section className="flex h-screen    overflow-x-hidden">
+
+       <Footer1 />
+         
+        
+        <main className="flex flex-3 flex-col flex-1 max-w-full gap-4">
         <Accueil/>
-<div className=" grid  md:grid-cols-2  md:gap-8 m-4 mb-20">
+<div className=" grid  md:grid-cols-2  md:gap-8 m-4 mb-20 lg:mx-12 lg:m-8">
     {/* image1 */}
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
@@ -293,9 +296,9 @@ return(
   <Footer />
 
 
-
+</main>
     </section>
-// </section>
+
 
 );
 
