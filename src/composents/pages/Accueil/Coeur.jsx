@@ -21,7 +21,7 @@ export default function Coeur({ itemData }) {
     <img
       src={isActive ? heart : Heart} // change l'image selon l'état
       alt="heart"
-      className="w-6 h-6  md:w-[36px] md:h-[36px] cursor-pointer"
+      className="w-6 h-6  md:w-8 md:h-8 lg:h-10 lg:w-10 cursor-pointer"
       onClick={handleClick}
     />
   );

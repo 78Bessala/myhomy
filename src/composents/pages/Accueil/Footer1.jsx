@@ -46,16 +46,16 @@ function Footer1() {
       <img
         src={logo2}
         alt="logo"
-        className="w-full  md:max-w-[120px] lg:max-w-[300px] lg:h-[100px] mx-auto mb-6"
+        className="w-full   md:mt-8 md:max-w-[270px] lg:mt-4  lg:max-w-[300px] lg:h-[100px] mx-auto mb-6"
       />
 
       {/* MENU */}
-      <nav className="flex flex-col  justify-center  lg:mx-24  gap-10">
+      <nav className="flex flex-col  justify-center    gap-10">
         {/* Maison */}
-        <Link to="/voir-tout" className="flex items-center gap-6">
+        <Link to="/voir-tout" className="flex items-center justify-center  gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full flex justify-center items-center ">
           <img
             src={activeItem === 'Maison' ? home1 : home}
-            className="w-10 h-10"
+            className="w-10 h-10 -ml-8"
           />
           <span className={`text-xl ${activeItem === 'Maison' ? 'text-[#0078EF]' : ''}`}>
             Maison
@@ -63,7 +63,7 @@ function Footer1() {
         </Link>
 
         {/* Reservation */}
-        <Link to="/reservation" className="flex items-center gap-6">
+        <Link to="/reservation" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full ">
           <img
             src={activeItem === 'Reservation' ? reservation1 : reservation}
             className="w-10 h-10"
@@ -74,10 +74,10 @@ function Footer1() {
         </Link>
 
         {/* Favoris */}
-        <Link to="/favoris" className="flex items-center gap-6">
+        <Link to="/favoris" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full ">
           <img
             src={activeItem === 'Favoris' ? favoris1 : favoris}
-            className="w-10 h-10"
+            className="w-10 h-10 -ml-10"
           />
           <span className={`text-xl ${activeItem === 'Favoris' ? 'text-[#0078EF]' : ''}`}>
             Favoris
@@ -85,10 +85,10 @@ function Footer1() {
         </Link>
 
         {/* Messages */}
-        <Link to="/message" className="flex items-center gap-6">
+        <Link to="/message" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-600 hover:rounded-full ">
           <img
             src={activeItem === 'Messages' ? message : message1}
-            className="w-10 h-10"
+            className="w-10 h-10 -ml-5"
           />
           <span className={`text-xl ${activeItem === 'Messages' ? 'text-[#0078EF]' : ''}`}>
             Messages
@@ -96,10 +96,10 @@ function Footer1() {
         </Link>
 
         {/* Profil */}
-        <Link to="/profil" className="flex items-center gap-6">
+        <Link to="/profil" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full ">
           <img
             src={activeItem === 'Profil' ? profil1 : profil}
-            className="w-10 h-10"
+            className="w-10 h-10 -ml-12"
           />
           <span className={`text-xl ${activeItem === 'Profil' ? 'text-[#0078EF]' : ''}`}>
             Profil

@@ -17,7 +17,7 @@ function Favoris() {
          
         
         <main className="flex flex-3 flex-col flex-1 pt-12  max-w-full gap-4 min-h-screen bg-[#D9D9D9]">
-        {/* <section className='flex flex-3 flex-col gap-4 pt-12 min-h-screen bg-[#D9D9D9]'> */}
+       
 
             <div className='flex flex-col gap-2'>
                 <div className='w-full h-12 lg:h-20 bg-[#0078EF] flex justify-center items-center'>
@@ -37,15 +37,15 @@ function Favoris() {
                                     style={{ backgroundImage: `url(${item.image})` }}
                                 >
                                     <div className="flex justify-end">
-                                        <img src={heart} className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]" />
+                                        <img src={heart} className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 md:h-[40px]" />
                                     </div>
 
                                     <Link to={`/${item.id}`}>
                                         <div className="flex gap-1 justify-end">
-                                            <div className="w-2 h-2 rounded-full border border-black bg-[#0078EF]"></div>
-                                            <div className="w-2 h-2 rounded-full border border-black bg-white"></div>
-                                            <div className="w-2 h-2 rounded-full border border-black bg-white"></div>
-                                            <div className="w-2 h-2 rounded-full border border-black bg-white"></div>
+                                            <div className="w-2 h-2 md:w-3 md:h-3 rounded-full border border-black bg-[#0078EF]"></div>
+                                            <div className="w-2 h-2  md:w-3 md:h-3 rounded-full border border-black bg-white"></div>
+                                            <div className="w-2 h-2 md:w-3 md:h-3  rounded-full border border-black bg-white"></div>
+                                            <div className="w-2 h-2 md:w-3 md:h-3  rounded-full border border-black bg-white"></div>
                                         </div>
                                     </Link>
                                 </div>
