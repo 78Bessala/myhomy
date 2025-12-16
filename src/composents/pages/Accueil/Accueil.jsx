@@ -2,6 +2,8 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import search from '../../../assets/public/search.svg';
 import logo2 from '../../../assets/public/logo2.svg';
+import logo from '../../../assets/public/logo.svg'
+import menu from '../../../assets/public/menu.svg'
 const tabsData = [
   { label: "Voir tout", path: "/voir-tout" },
   { label: "Duplex", path: "/duplex" },
@@ -52,15 +54,36 @@ const Accueil = () => {
   }, [activeTab]);
 
   return (
-    <section className="flex flex-col gap-4 m">
-      {/* <img src={logo2} className="w-[82px] h-[82px] md:hidden"/> */}
+    <section className="flex flex-col gap-4 mt-2">
+      {/* <div className="flex justify-between m-4">
+        <img src={logo} className="w-[42px] h-[42px] md:hidden"/>
+         <img src={search} className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]" alt="search" />
+         <img src={menu} className="w-[24px] h-[24px] md:hidden"/>
+      </div>
+       */}
       {/* Header */}
-      <header className=" mt-8 md:mt-10">
-        <div className="h-16 w-full lg:h-20 bg-[#F3F2F2] p-1 px-3 flex justify-center items-center">
-          <div className="h-8 lg:h-10 w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
-            <img src={search} className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]" alt="search" />
-            <h1 className="text-xs sm:text-sm md:text-base lg:text-xl">Rechercher une ville, une date, un prix</h1>
-          </div>
+      <div id='bouton' className="flex  gap-4 justify-end  mt-4 mx-4">
+      <button  
+          
+          className=' w-32  lg:w-52 h-8  lg:h-10 bg-[#0078EF] rounded-[8px] text-base lg:text-xl text-white'
+        >
+          S'inscrire
+        </button>
+        <button 
+          
+          className=' w-32 lg:w-52 h-8  lg:h-10  border border-[#0078EF] rounded-[8px] text-base lg:text-xl text-[#0078EF] '
+        >
+          se connecter 
+        </button>
+        </div>
+
+      <header className=" mt-1  flex justify-center ">
+      <div id="barre" className="h-16  w-full lg:h-20 bg-[#F3F2F2] md:bg-white  p-1 px-3 flex justify-center items-center gap-4">
+            <div className="h-8 lg:h-10  md:w-[800px] w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
+              <img src={search} className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]" alt="search" />
+             <h1 className="text-xs sm:text-sm md:text-base lg:text-xl">Rechercher une ville, une date, un prix</h1>
+            </div>
+          
         </div>
       </header>
 
@@ -80,7 +103,7 @@ const Accueil = () => {
               key={tab.label}
               ref={(el) => (buttonsRef.current[tab.label] = el)}
               onClick={() => handleClick(tab)}
-              className={`text-base lg:text-xl transition-all hover:-translate-y-1 hover:text-gray-700 px-1 ${
+              className={`text-base lg:text-xl lg:gap-12 transition-all hover:-translate-y-1 hover:text-gray-700 px-1 ${
                 activeTab === tab.label ? "text-[#0078EF] font-semibold" : "text-black"
               }`}
             >

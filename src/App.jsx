@@ -16,7 +16,7 @@ import ProfilV from './composents/pages/Auth/Parametres/ProfilV';
 import Parametre from './composents/pages/Auth/Parametres/Parametre';
 import Sprof from './composents/pages/Auth/Parametres/Sprof';
 
-
+////////////////////////////////////////////////////////////////
 import { ReservationProvider } from './context/ReservationContext';
 import { FavorisProvider } from './composents/pages/Accueil/FavorisContext';
 
@@ -118,4 +118,5 @@ function App() {
 
   );
 }
+export default App;
 
