@@ -82,7 +82,7 @@ function Profil(){
       <section className="flex justify-center bg-[#0078EF]  ">
         <div className="inline-flex items-center  rounded-md border border-gray-300 bg-gray-100 px-5 py-1.5 shadow-sm">
           <GoPulse className="text-[18px] text-black mr-1" />
-          <span className="text-[11px]  lg:text-lg font-semibold text-gray-800">
+          <span className="text-[11px]  lg:text-[25px] font-semibold text-gray-800">
             Publications
           </span>
         </div>
@@ -127,7 +127,7 @@ function Profil(){
       </div>
 
       {/* Contenu */}
-      <div className="p-3 h-16 lg:h-24 flex flex-col gap-1 ">
+      <div className="p-1 h-16 lg:h-24 flex flex-col  lg:p-4 md:p-2 md:gap-1 lg:gap-2 ">
         <div className="flex justify-between items-start">
           <p className="font-semibold truncate lg:text-[16px]">{item.title}</p>
           <div className="flex justify-between text-gray-500">
