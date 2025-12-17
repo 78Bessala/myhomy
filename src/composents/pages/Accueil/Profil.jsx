@@ -89,140 +89,64 @@ function Profil(){
       </section>
 
       {/* Grille de cartes */}
-      <main className="px-3 mt-3  lg:mt-8 grid grid-cols-2 gap-3">
-        {/* Carte 1 */}
-        <div className=" flex  flex-col  gap-4 md:gap-8 border rounded-xl overflow-hidden bg-white shadow-sm">
-          <div className="h-32 md:h-48 lg:h-56 bg-gray-200" >
+<main className="px-3 mt-3 lg:mt-8 grid gap-3 
+                 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-            <img src={s1} />
-          </div>
-          <div className="p-3 lg:bg-white">
-            <div className='flex justify-between items-start'>
-            <p className="text-[11px] font-semibold">Studio Meublé</p>
-            <div className='flex  gap-1'> <PiMapPinAreaFill className="text-blue-600 mt-1" />
-            <p className="text-[9px] text-gray-500 mt-1">Mendong, Yaoundé</p></div>
-            </div>
-            <p className="text-[10px] text-gray-600">50 000 Fcfa / nuit</p>
-           
-            <div className='flex  gap-1'>
-                     <HiMiniCheckBadge className="text-blue-600 text-[18px] mt-1" />
-            <p className="mt-1 text-[12px] text-[#0078EF] font-medium">
-              Publié le 2 Novembre
-            </p>
-        
-            </div>
-           
+  {[{
+    img: s1,
+    title: "Studio Meublé",
+    location: "Mendong, Yaoundé",
+    price: "50 000 Fcfa / nuit",
+    date: "Publié le 2 Novembre"
+  },{
+    img: v1,
+    title: "Villa avec Piscine",
+    location: "Odza, Yaoundé",
+    price: "250 000 Fcfa / nuit",
+    date: "Publié le 15 Décembre"
+  },{
+    img: v2,
+    title: "Villa luxe",
+    location: "Simbock, Yaoundé",
+    price: "400 000 Fcfa / nuit",
+    date: "Publié le 2 Novembre"
+  },{
+    img: a1,
+    title: "Appartement",
+    location: "Bastos, Yaoundé",
+    price: "150 000 Fcfa / nuit",
+    date: "Publié le 15 Décembre"
+  }].map((item, index) => (
+    <article
+      key={index}
+      className="flex flex-col gap-1 md:gap-2 border rounded-xl overflow-hidden bg-white shadow-sm"
+    >
+      {/* Image */}
+      <div className="h-32 sm:h-40 md:h-48 lg:h-56 bg-gray-200">
+        <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+      </div>
+
+      {/* Contenu */}
+      <div className="p-3 h-16 lg:h-24 flex flex-col gap-1 ">
+        <div className="flex justify-between items-start">
+          <p className="font-semibold truncate lg:text-[16px]">{item.title}</p>
+          <div className="flex justify-between text-gray-500">
+            <PiMapPinAreaFill className="text-blue-600 text-[12px] lg:text-[16px]" />
+            <h2 className="text-[9px] sm:text-[13px] lg:text-[14px]">{item.location}</h2>
           </div>
         </div>
 
-        {/* Carte 2 */}
-        <article className="  flex flex-col gap-4 md:gap-8 border rounded-xl overflow-hidden bg-white shadow-sm">
-          <div className="h-32  md:h-48 lg:h-56 bg-gray-200" >
+        <p className="text-gray-700 text-[9px] sm:text-[10px]">{item.price}</p>
 
-            <img src={v1} />
-          </div>
-          <div className="p-2 lg:bg-white">
-             <div className='flex  justify-between '>
-            <p className="text-[11px]  md:text-base
-            font-semibold">Villa avec Piscine</p>
-              <div className='flex  gap-1'>
-             <PiMapPinAreaFill className="text-blue-600" />
-             <p className="text-[9px]  text-gray-500 mt-1">Odza, Yaoundé</p>
-             </div>
-            </div>
-            <p className="text-[10px] text-gray-600">250 000 Fcfa / nuit</p>
-           
-            
-            <div className='flex  gap-1'>
-            <HiMiniCheckBadge className="text-blue-600 text-[18px]" />
-            <p className="mt-1  text-[12px] text-[9px] text-[#0078EF] font-medium">
-              Publié le 15 Décembre
-            </p>
-            </div>
-          </div>
-        </article>
+        <div className="flex items-center gap-1 mb-2">
+          <HiMiniCheckBadge className="text-blue-600 text-[16px]" />
+          <p className="text-[#0078EF] font-medium text-[8px] sm:text-[10px]">{item.date}</p>
+        </div>
+      </div>
+    </article>
+  ))}
+</main>
 
-        {/* Carte 3 */}
-        <article className=" flex flex-col md:gap-8  gap-4border rounded-xl overflow-hidden bg-white shadow-sm">
-          {/* Image placeholder */}
-          <div className="h-32 md:h-48 lg:h-56  bg-gray-200" >
-            <img src={v2} />
-          </div>
-
-          <div className="p-3 text-[10px] lg:bg-white">
-
-            {/* Titre + localisation */}
-            <div className="flex justify-between items-start">
-              <p className="font-semibold text-[12px] truncate max-w-[100px]">
-                Villa luxe
-              </p>
-
-              <div className="flex items-center gap-1 text-gray-500">
-                <PiMapPinAreaFill className="text-blue-600 text-[12px]" />
-                <span className="text-[9px]">Simbock,Yaoundé</span>
-              </div>
-            </div>
-
-            {/* Prix */}
-            <p className="mt-1 text-gray-700 text-[9px]">
-              400 000 Fcfa / nuit
-            </p>
-
-            {/* Publication avec icône alignée */}
-            <div className="flex items-center justify-between mt-1">
-              <div className="flex items-center gap-1">
-                <HiMiniCheckBadge className="text-blue-600 text-[16px]" />
-                <p className=" text-[12px] text-[#0078EF] font-medium text-[8px]">
-                  Publié le 2 Novembre
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </article>
-
-
-        {/* Carte 4 */}
-        <article className=" flex flex-col md:gap-8 border rounded-xl overflow-hidden bg-white shadow-sm">
-
-          {/* Image placeholder */}
-          <div className="h-32 md:h-48 lg:h-56  bg-gray-200" >
-            <img src={a1} />
-          </div>
-
-          <div className="p-3 text-[10px] lg:bg-white">
-
-            {/* Titre + localisation */}
-            <div className="flex justify-between items-start">
-              <p className="font-semibold text-[12px] truncate max-w-[100px]">
-                Appartement
-              </p>
-
-              <div className="flex items-center gap-1 text-gray-500">
-                <PiMapPinAreaFill className="text-blue-600 text-[12px]" />
-                <span className="text-[9px]">Bastos,Yaoundé</span>
-              </div>
-            </div>
-
-            {/* Prix */}
-            <p className="mt-1 text-gray-700 text-[9px]">
-              150 000 Fcfa / nuit
-            </p>
-
-            {/* Publication avec icône alignée */}
-            <div className="flex items-center justify-between mt-1">
-              <div className="flex items-center gap-1">
-                <HiMiniCheckBadge className="text-blue-600 text-[16px]" />
-                <p className=" text-[12px]  text-[#0078EF] font-medium text-[8px]">
-                  Publié le 15 Décembre
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </article>
-
-      </main>
 
       {/* Bottom navigation */}
       
