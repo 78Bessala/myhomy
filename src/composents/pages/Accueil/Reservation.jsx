@@ -43,7 +43,7 @@ function Reservation() {
 
                                         <div className='flex gap-1'>
                                             <img src={map} className='w-4 h-4'/>
-                                            <h2 className='text-xs md:text-sm text-[#58575D]'>{reservation.location}</h2>
+                                            <h2 className='text-[9px] md:text-sm text-[#58575D]'>{reservation.location}</h2>
                                         </div>
                                     </div>
 

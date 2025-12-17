@@ -1,142 +1,211 @@
-import React from "react";
+
 import logo from '../../../../images/logo.svg';
 import utilitaire from "../../../../images/utilitaire.jpeg";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { BsEyeSlash } from "react-icons/bs";
+import React, { useState, useEffect } from "react";
+
+  
 import { Link } from "react-router-dom";
-
-const Register = () => {
-  return (
-    <section>
-
-      <section  >
-        <div className="relative w-full">
-
-          {/* Image de fond */}
-          <img
-            src={utilitaire}
-            alt="image d'un batiment"
-            className="w-full h-auto"
-          />
-
-          {/* Logo centré */}
-          <img
-            src={logo}
-            alt="logo"
-            className="
-               absolute
-               top-1/2 left-1/2
-               -translate-x-1/2 -translate-y-1/2
-               w-48 h-48
-               object-contain
-             "
-          />
-
-        </div>
-      </section>
+import bg3 from '../../../../assets/public/s4.jpg'
+import bg4 from '../../../../assets/public/03.jpg'
+import bg1 from '../../../../assets/public/v2.jpg'
+import bg2 from '../../../../assets/public/v3.jpg'
+import logo3 from '../../../../assets/public/logo3.svg'
 
 
-      <div className="h-screen bg-[#A3D2FF] flex flex-col gap-2 9 md:flex-row">
+const backgrounds = [bg1, bg2, bg3,bg4];
+ function Register () {
 
-        {/* Partie gauche avec le logo sur fond bleu */}
-        {/* Flèche + Header bleu */}
-        <div className="bg-[#A3D2FF]">
+    const [index, setIndex] = useState(0);
 
-          {/* Flèche retour */}
-          <Link to="/welcomme">
-            <div className="px-4 pt-4 text-black text-2xl cursor-pointer">
-              <FaArrowLeftLong />
-            </div></Link>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % backgrounds.length);
+    }, 4000); // change toutes les 4 secondes
+
+    return () => clearInterval(interval);
+  }, []);
+
+    return (
+<main className="h-screen flex items-center justify-center  md:p-16 bg-gray-100 overflow-hidden">
+
+      <section className="
+        w-full
+        h-full
+        max-w-7xl
+        flex
+        gap-4
+        md:rounded-2xl
+        bg-white
+         md:p-8
+        shadow-2xl
+        overflow-hidden
+      ">
+        <section id="bord"
+          className="
+            flex-1
+            h-full
+            bg-cover
+            bg-center
+            transition-all
+            duration-700
+            relative
+            flex
+            items-center
+            justify-center
+            rounded-xl
+            overflow-hidden
+            
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.8)
+              ),
+              url(${backgrounds[index]})
+            `,
+          }}
+        >
+          <Link to="/voir-tout" className="absolute top-4 left-4 text-white text-2xl">
+            <FaArrowLeftLong />
+          </Link>
+
+          <img src={logo3} alt="logo" className="w-56 h-56" />
+        </section>
 
 
-          {/* Logo */}
-          <div className="flex justify-center items-center h-56">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-48 h-48 object-contain"
-            />
-          </div>
-        </div>
+      {/*ghcgfgfjf  */}
 
-        {/* Partie droite */}
-        <div className=" h-full flex flex-col  gap-4 bg-[#EBEBF2] justify-center items-center md:w-1/2 p-8 space-y-6  rounded-3xl ">
-          <h2 className="text-center text-3xl font-bold mb-6">s'inscrire</h2>
 
-          {/* FORMULAIRE SANS RECTANGLE */}
-          <form className="w-full  flex flex-col gap-2 max-w-md">
 
-            <div className="mb-4">
-              <input
-                type="text"
-                id="nom"
-                placeholder="Entrer votre nom"
-                className="w-full h-[48px] pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-            </div>
 
-            <div className="mb-4">
-              <input
-                type="email"
-                id="email"
-                placeholder="you@example.com"
-                className="w-full h-[48px] pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-            </div>
 
-            <div className="mb-4 relative">
-              <input
-                type="password"
-                id="password"
-                placeholder="••••••••"
-                className="w-full h-[48px] pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
+      
 
-              <span className="absolute right-4 top-3.5 text-gray-400 cursor-pointer">
-                <BsEyeSlash />
-              </span>
-            </div>
 
-            <button
-              type="submit"
-              className="w-full bg-[#203D89] text-white h-[48px] rounded-[10px] hover:bg-[#1A326F] transition-colors mb-6"
-            >
-              S'inscrire
-            </button>
+     {/* ///////////////////// */}
+     
+           <div className=" bg-[#A3D2FF]  md:bg-[#EBEBF2] flex  gap-12 md:gap-0 flex-col md:flex-row flex-1 md:rounded-xl">
+     
+     
+     
+             <div className="bg-[#A3D2FF] flex  gap-4   overflow-x-hidden">
+     
+               {/* Flèche retour */}
+               <Link to="/welcome">
+                 <div className="px-4 pt-4 text-black text-2xl cursor-pointer md:hidden">
+                   <FaArrowLeftLong />
+                 </div>
+               </Link>
+     
+               {/* Logo */}
+               <div className="flex justify-center items-center h-80">
+                 <img
+                   src={logo}
+                   alt="logo"
+                   className="w-56 h-56  object-contain md:hidden"
+                 />
+               </div>
+             </div>
+     
+             {/* Formulaire */}
+             <div className="w-full md:rounded-xl  h-full md:max-w-full  flex  flex-col gap-6 md:gap-8 lg:gap-12 md:min-h-full  bg-[#EBEBF2]   rounded-t-3xl md:rounded-[1px]  p-8 lg:p-12">
+     
+               {/* Titre */}
+               <h2 className="text-center text-3xl font-bold mb-6">S'inscrire</h2>
+               <div className="flex flex-col gap-4">
 
-            {/* Séparateur */}
-            <div className="flex items-center ">
-              <span className="flex-1 h-px bg-[#989393] "></span>
-              <span className="px-3 text-gray-500 text-sm">ou avec</span>
-              <span className="flex-1 h-px bg-[#989393] "></span>
-            </div>
+     
+                 
+     
+                 {/* section suivqnte */}
+                 <div className="flex flex-col gap-4">
+                   
 
-            {/* Icônes réseaux sociaux */}
-            <div className="flex justify-between m-4 text-3xl">
-              <FcGoogle className="cursor-pointer" />
-              <FaFacebook className="text-blue-600 cursor-pointer" />
-              <FaApple className="cursor-pointer" />
-            </div>
+                    <div className="flex flex-col gap-6">
+                {/* nomggg */}
+               <div className="">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="myhomy@example.com"
+                    className="w-full h-[48px] flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    required
+                  />
+                </div>
+                     {/* Champ email */}
+                     <div className="">
+                       <input
+                         type="email"
+                         id="email"
+                         placeholder="myhomy@example.com"
+                         className="w-full h-[48px] flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                         required
+                       />
+                     </div>
+     
+     
+                     {/* Champ mot de passe */}
+                     <div className=" relative">
+                       <input
+                         type="password"
+                         id="password"
+                         placeholder="****************"
+                         className="flex items-center w-full h-[48px] pl-4 border border-[#989393] rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                         required
+                       />
+                       <span className="absolute right-4 top-4 text-[#989393] cursor-pointer flex items-center"><BsEyeSlash /></span>
+                     </div>
+                   </div>
 
-          </form>
-
-          {/* TEXTE CENTRÉ SUR LA PAGE EN DEHORS DU FORM */}
-          <p className="text-sm  text-black text-center">
-            Vous avez déjà un compte?{" "}
-            <Link to="/login" className="text-[#203D89] font-medium hover:underline">
-              Se connecter
-            </Link>
-          </p>
-
-        </div>
-      </div>
-
-    </section>
+                   {/* Ligne "ou avec" */}
+                 <div className="flex items-center my-4">
+                   {/* <hr className="flex-1  bg-gray-400"/> */}
+                   <span className="flex-1 h-px bg-[#989393]"></span>
+                   <span className="px-3 text-gray-500 text-sm">ou avec</span>
+                   {/* <hr className="flex-1  bg-[#989393]"/> */}
+                   <span className="flex-1 h-px bg-[#989393]"></span>
+                 </div>
+     
+                      {/* Boutons de connexion */}
+                 <div className="flex justify-center   gap-16 m-4 mb-4 text-3xl">
+                   <FcGoogle className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
+                   <FaFacebook className="text-blue-600 cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
+                   <FaApple className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
+                 </div>
+        
+                 </div>
+     
+     
+                 {/* Bouton */}
+                 <button
+                   type="submit"
+                   className="w-full bg-[#0078EF]  h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-blue-600 transition-colors"
+                 >
+                   S'inscrire
+                 </button>
+     
+     
+                 {/* Texte en bas */}
+                 <p className="text-[11px] mt-6 text-black text-center">
+                   Vous avez deja un compte {" "}
+                  <Link to ='/login'> <span className=" ml-1 text-[#0078EF] font-bold">Se connecter</span>.</Link>
+                 </p>
+     
+               </div>
+             </div>
+     
+           </div>
+</section>
+   
+   
+    
+    </main>
   );
 
 };

@@ -67,7 +67,7 @@ return(
 
         <Accueil/>
 
-<div className=" grid  md:grid-cols-2  md:gap-8 lg:gap-12 m-4 mb-20 lg:mx-12 lg:m-8">
+<div className=" grid  md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 m-4 mb-20 lg:mx-12 lg:m-8">
     {/* image1 */}
     <div className=" flex flex-col gap-2">
         <div className=" flex flex-col   items-center  ">
@@ -252,7 +252,7 @@ return(
 
         </div>  </div>
      {/* sous titre de l'image */}
-        <div className="mx-2 flex  justify-between">
+        <div className="mx-2  mb-20 flex  justify-between">
 
             <div>
 

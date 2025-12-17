@@ -3,6 +3,7 @@ import Frame from "../../../images/Frame 132.svg";
 import homes from "../../../images/homes.jpeg";
 import Login from "../Auth/Login/Login";
 import { Link } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const Welcomme = () => {
   return (
@@ -12,6 +13,10 @@ const Welcomme = () => {
         backgroundImage: `url(${homes})`,
       }}
     >
+
+          <Link to="/voir-tout" className="absolute top-4 left-4 text-white text-2xl">
+            <FaArrowLeftLong />
+          </Link>
 
       {/* LOGO EN HAUT */}
       <img

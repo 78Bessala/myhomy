@@ -26,7 +26,7 @@ const ProfilP = () => {
         </div>
 
         {/* Contenu blanc */}
-        <div className="px-4 pb-4 bg-white relative rounded-tl-3xl border border-blue-900">
+        <div className="px-4 pb-4 bg-white relative rounded-tl-4xl border border-blue-900">
 
           {/* Avatar */}
           <div className="absolute -top-10 left-4">

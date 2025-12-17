@@ -1,108 +1,195 @@
-import React from "react";
-import logo from "../../../../images/logo.svg";
-import utilitaire from "../../../../images/utilitaire.jpeg";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
+
+import logo from "../../../../images/logo.svg";
+import logo3 from "../../../../assets/public/logo3.svg";
+
+import bg1 from "../../../../assets/public/s1.jpg";
+import bg2 from "../../../../assets/public/v3.jpg";
+import bg3 from "../../../../assets/public/v1.jpg";
+import bg4 from "../../../../assets/public/03.jpg";
+
+const backgrounds = [bg1, bg2, bg3, bg4];
 
 const Verification = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % backgrounds.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
+    <main className="h-screen flex items-center justify-center md:p-16 bg-gray-100 overflow-hidden">
 
-    <section>
+      <section
+        className="
+          w-full
+          h-full
+          max-w-7xl
+          flex
+          gap-4
+          md:rounded-2xl
+          bg-white
+          md:p-8
+          shadow-2xl
+          overflow-hidden
+        "
+      >
 
-
-      <section  >
-        <div className="relative w-full h-64">
-          {/* Background */}
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${utilitaire})` }}
-          />
-
-          {/* Logo centré */}
-          <img
-            src={logo}
-            alt="logo"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          />
-        </div>
-
-      </section>
-
-
-
-      <div className="h-screen bg-[#A3D2FF] flex flex-col gap-2">
-        {/* Flèche retour */}
-        <Link to="/forgot">
-          <div className="px-4 pt-4 text-black text-2xl cursor-pointer">
+        {/* ===== GAUCHE : BACKGROUND SLIDER ===== */}
+        <section
+          id="bord"
+          className="
+            flex-1
+            h-full
+            bg-cover
+            bg-center
+            transition-all
+            duration-700
+            relative
+            flex
+            items-center
+            justify-center
+            rounded-xl
+            overflow-hidden
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.8)
+              ),
+              url(${backgrounds[index]})
+            `,
+          }}
+        >
+          <Link to="/forgot" className="absolute top-4 left-4 text-white text-2xl">
             <FaArrowLeftLong />
-          </div>
-        </Link>
+          </Link>
 
+          <img src={logo3} alt="logo" className="w-56 h-56" />
+        </section>
 
-        {/* Header bleu avec logo */}
-        <div className="flex justify-center items-center p-4">
-          <img
-            src={logo}
-            alt="le-logo"
-            className="w-48 h-48 object-contain"
-          />
-        </div>
+        {/* ===== DROITE ===== */}
+        <div className="bg-[#A3D2FF] md:bg-[#EBEBF2] flex gap-12 md:gap-0 flex-col md:flex-row flex-1 md:rounded-xl">
 
-        {/* Container Blanc arrondi seulement en haut */}
-        <div className=" flex flex-col gap-6 h-full bg-[#EAE6F4]  rounded-t-3xl p-6 shadow-lg">
+          {/* ===== HEADER MOBILE ===== */}
+          <div className="bg-[#A3D2FF] flex gap-4 overflow-x-hidden md:hidden ">
+            <Link to="/forgot">
+              <div className="px-4 pt-4 text-black text-2xl cursor-pointer md:hidden">
+                <FaArrowLeftLong />
+              </div>
+            </Link>
 
-          {/* Titre */}
-          <h2 className="text-center text-3xl font-bold mb-1">
-            Vérification
-          </h2>
-
-          <p className="text-center text-gray-600 text-sm mb-5">
-            Entrer le code pour confirmer.
-          </p>
-
-          {/* Info mail */}
-          <p className="text-center text-sm ;t-2">
-            Nous avons envoyé le code <br />
-            à votre <span className="font-bold">mail@gmail.com</span>
-          </p>
-
-          {/* Cases de code */}
-          <div className="flex justify-center gap-1 mb-6">
-            {Array(6).fill(0).map((_, i) => (
-              <input
-                key={i}
-                type="text"
-                maxLength={1}
-                className="w-12 h-12 border border-[#989393] rounded-[10px] text-center text-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+            <div className="flex justify-center items-center h-80">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-56 h-56 object-contain md:hidden"
               />
-            ))}
+            </div>
           </div>
 
-          {/* Button */}
-          <button className="w-full bg-[#203D89] text-white py-3 rounded-[10px] text-sm font-medium">
-            <Link to="/new">Continuer</Link>
-          </button>
+          {/* ===== FORMULAIRE ===== */}
+          <div
+            className="
+              w-full
+              md:rounded-xl
+              h-full
+              flex
+              flex-col
+              gap-6
+              md:gap-10
+              lg:gap-10
+              bg-[#EAE6F4]
+              rounded-t-3xl
+              md:rounded-[1px]
+              p-8
+              lg:p-12
+              md:min-h-full
+            "
+          >
+            {/* TITRE */}
+            <h2 className="text-center text-3xl lg:text-4xl font-bold mt-4 md:mt-8 lg:mt-16">
+              Vérification
+            </h2>
 
-          {/* Lien renvoyer code */}
-          <p className="text-center text-xs mt-3 text-gray-800">
-            N'avez-vous pas reçu de code?{" "}
-            <Link to="/verification" className="text-[#203D89] font-medium">
-              Renvoyer le code
-            </Link>
-          </p>
+            <p className="text-center text-gray-600 text-sm">
+              Entrez le code pour confirmer.
+            </p>
 
-          {/* Retour login */}
-          <div className="flex gap-1 items-center text-xs text-gray-800 mt-8 cursor-pointer">
-            <span className="text-lg mr-1"><FaArrowLeftLong /></span>
-            Retourner sur
-            <Link to="/login" className="hover:underline"> <span className="text-[#203D89] font-medium">se connecter</span>
+            {/* INFO EMAIL */}
+            <p className="text-center text-sm">
+              Nous avons envoyé le code <br />
+              à votre <span className="font-bold">mail@gmail.com</span>
+            </p>
+
+            {/* INPUT CODE */}
+            <div className="flex justify-center gap-2 my-4">
+              {Array(6).fill(0).map((_, i) => (
+                <input
+                  key={i}
+                  type="text"
+                  maxLength={1}
+                  className="
+                    w-12
+                    h-12
+                    border
+                    border-[#989393]
+                    rounded-[10px]
+                    text-center
+                    text-lg
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-blue-400
+                  "
+                />
+              ))}
+            </div>
+
+            {/* BUTTON */}
+            <Link to="/new">
+              <button
+                className="
+                  w-full
+                  bg-[#0078EF]
+                  h-[48px]
+                  text-white
+                  rounded-[10px]
+                  hover:bg-blue-600
+                  transition
+                "
+              >
+                Continuer
+              </button>
             </Link>
+
+            {/* RESEND */}
+            <p className="text-center text-xs text-gray-800">
+              N'avez-vous pas reçu de code ?{" "}
+              <Link to="/verification" className="text-[#0078EF] font-medium">
+                Renvoyer le code
+              </Link>
+            </p>
+
+            {/* BACK LOGIN */}
+            <div className="flex justify-center items-center gap-1 text-xs text-gray-800 mt-4">
+              <FaArrowLeftLong />
+              <span>Retourner sur</span>
+              <Link to="/login" className="text-[#0078EF] font-bold hover:underline">
+                se connecter
+              </Link>
+            </div>
           </div>
-
         </div>
-      </div>
-    </section>
-
+      </section>
+    </main>
   );
 };
 

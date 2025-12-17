@@ -57,7 +57,7 @@ function App() {
 {/* authentification */}
 
       {/* Page par défaut = Accueil */}
-        <Route path="/" element={<Welcomme />} />
+        {/* <Route path="/" element={<Welcomme />} /> */}
 
         {/* Autres pages */}
         <Route path="/welcome" element={<Welcomme />} />

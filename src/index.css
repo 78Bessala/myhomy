@@ -59,9 +59,22 @@ body {
 @media (min-width: 624px) {
     #bord {
         display: flex; 
-        /* position: fixed;  */
-        /* top: 0;
-        left: 0; */
+       
+      
+        
+    }
+}
+
+#logo1{
+    /* 1. Masquage par défaut (Mobile First) */
+    display: flex;
+}
+
+/* 2. Media Query pour l'affichage sur Desktop (624px et plus) */
+@media (min-width: 624px) {
+    #logo1 {
+        display: none; 
+       
       
         
     }

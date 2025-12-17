@@ -63,14 +63,14 @@ const Login = () => {
             backgroundImage: `
               linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0.8, 0.8)
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.8)
               ),
               url(${backgrounds[index]})
             `,
           }}
         >
-          <Link to="/welcomme" className="absolute top-4 left-4 text-white text-2xl">
+          <Link to="/voirtout" className="absolute top-4 left-4 text-white text-2xl">
             <FaArrowLeftLong />
           </Link>
 
@@ -91,14 +91,14 @@ const Login = () => {
         <div className="bg-[#A3D2FF] flex  gap-4   overflow-x-hidden">
 
           {/* Flèche retour */}
-          <Link to="/welcomme">
+          <Link to="/welcome">
             <div className="px-4 pt-4 text-black text-2xl cursor-pointer md:hidden">
               <FaArrowLeftLong />
             </div>
           </Link>
 
           {/* Logo */}
-          <div className="flex justify-center items-center h-80">
+          <div className=" md:hideflex justify-center items-center h-80">
             <img
               src={logo}
               alt="logo"
@@ -108,13 +108,13 @@ const Login = () => {
         </div>
 
         {/* Formulaire */}
-        <div className="w-full md:rounded-xl  h-full md:max-w-full  flex  flex-col gap-4 md:gap-8 lg:gap-12 md:min-h-full  bg-[#EBEBF2]   rounded-t-3xl md:rounded-[1px]  p-6 lg:p-12">
+        <div className="w-full md:rounded-xl  h-full md:max-w-full  flex  flex-col gap-4 md:gap-8 lg:gap-12 md:min-h-full  bg-[#EBEBF2]   rounded-t-3xl md:rounded-[1px]  p-8 lg:p-12">
 
           {/* Titre */}
-          <h2 className="text-center text-3xl font-bold mb-6">se connecter</h2>
+          <h2 className="text-center text-3xl font-bold mb-6 mt-4 md:mt-10 lg:mt-12 lg:text-4xl">se connecter</h2>
           <div className="flex flex-col gap-4">
             {/* Boutons de connexion */}
-            <div className="flex justify-between  lg:mx-12 m-4 mb-4 text-3xl">
+            <div className="flex justify-center   gap-16 m-4 mb-4 text-3xl">
               <FcGoogle className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 " />
               <FaFacebook className="text-blue-600 cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10" />
               <FaApple className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10" />
@@ -132,6 +132,7 @@ const Login = () => {
             {/* section suivqnte */}
             <div>
               <div>
+                
                 {/* Champ email */}
                 <div className="mb-4">
                   <input
@@ -165,7 +166,7 @@ const Login = () => {
                   <span className="text-xs">me rappeler</span>
                 </label>
 
-                <Link to="/forgot" className="text-[#203D89] text-xs font-medium hover:underline">
+                <Link to="/forgot" className="text-[#0078EF] text-xs font-medium hover:underline">
                   mot de passe oublié ?
                 </Link>
 
@@ -177,7 +178,7 @@ const Login = () => {
             {/* Bouton */}
             <button
               type="submit"
-              className="w-full bg-[#203D89] h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-[#1A326F] transition-colors"
+              className="w-full bg-[#0078EF]  h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-[#1A326F] transition-colors"
             >
               se connecter
             </button>
