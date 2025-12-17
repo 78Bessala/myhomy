@@ -10,6 +10,11 @@ import { PiMapPinAreaFill } from "react-icons/pi";
 import { GoPulse } from "react-icons/go";
 import { RiHome4Fill } from "react-icons/ri";
 import { HiMiniCheckBadge } from "react-icons/hi2";
+import user from '../../../assets/public/user.jpeg'
+import s1 from '../../../assets/public/s01.jpeg'
+import v1 from '../../../assets/public/v1.jpg'
+import v2 from '../../../assets/public/v0.jpg'
+import a1 from '../../../assets/public/a3.jpg'
 
 
 
@@ -20,7 +25,7 @@ function Profil(){
         <Footer1 />
         {/* <section className='flex-2'> */}
 <div className="min-h-screen flex flex-col  flex-3 max-w-full
- mx-auto bg-white font-sans text-[13px] ">
+ mx-auto bg-white font-sans text-[13px]  ">
       {/* En-tête profil */}
       <header className="relative bg-[#0078EF] ">
 
@@ -38,8 +43,9 @@ function Profil(){
         <div className="px-4 pb-4 bg-white relative rounded-tl-4xl border border-blue-900">
 
           {/* Avatar */}
-          <div className="absolute -top-10 left-4">
-            <div className="w-20 h-20 rounded-full bg-gray-200 border-4 border-white shadow-md" />
+          <div className="absolute -top-20 left-4">
+            <div className="w-32 h-32 rounded-full bg-gray-200 border-4 border-white shadow-md bg-cover"  style={{ backgroundImage: `url(${user})` }}></div> 
+           
           </div>
 
           {/* Bouton éditer */}
@@ -76,54 +82,78 @@ function Profil(){
       <section className="flex justify-center bg-[#0078EF]  ">
         <div className="inline-flex items-center  rounded-md border border-gray-300 bg-gray-100 px-5 py-1.5 shadow-sm">
           <GoPulse className="text-[18px] text-black mr-1" />
-          <span className="text-[11px] font-semibold text-gray-800">
+          <span className="text-[11px]  lg:text-lg font-semibold text-gray-800">
             Publications
           </span>
         </div>
       </section>
 
       {/* Grille de cartes */}
-      <main className="px-3 mt-3 pb-20 grid grid-cols-2 gap-3">
+      <main className="px-3 mt-3  lg:mt-8 grid grid-cols-2 gap-3">
         {/* Carte 1 */}
-        <article className="border rounded-xl overflow-hidden bg-white shadow-sm">
-          <div className="h-24 bg-gray-200" />
-          <div className="p-2">
+        <div className=" flex  flex-col  gap-4 md:gap-8 border rounded-xl overflow-hidden bg-white shadow-sm">
+          <div className="h-32 md:h-48 lg:h-56 bg-gray-200" >
+
+            <img src={s1} />
+          </div>
+          <div className="p-3 lg:bg-white">
+            <div className='flex justify-between items-start'>
             <p className="text-[11px] font-semibold">Studio Meublé</p>
+            <div className='flex  gap-1'> <PiMapPinAreaFill className="text-blue-600 mt-1" />
+            <p className="text-[9px] text-gray-500 mt-1">Mendong, Yaoundé</p></div>
+            </div>
             <p className="text-[10px] text-gray-600">50 000 Fcfa / nuit</p>
-            <PiMapPinAreaFill className="text-blue-600" />
-            <p className="text-[9px] text-gray-500 mt-1">Mendong, Yaoundé</p>
-            <HiMiniCheckBadge className="text-blue-600 text-[18px]" />
-            <p className="mt-1 text-[9px] text-[#0078EF] font-medium">
+           
+            <div className='flex  gap-1'>
+                     <HiMiniCheckBadge className="text-blue-600 text-[18px] mt-1" />
+            <p className="mt-1 text-[12px] text-[#0078EF] font-medium">
               Publié le 2 Novembre
             </p>
+        
+            </div>
+           
           </div>
-        </article>
+        </div>
 
         {/* Carte 2 */}
-        <article className="border rounded-xl overflow-hidden bg-white shadow-sm">
-          <div className="h-24 bg-gray-200" />
-          <div className="p-2">
-            <p className="text-[11px] font-semibold">Villa avec Piscine</p>
+        <article className="  flex flex-col gap-4 md:gap-8 border rounded-xl overflow-hidden bg-white shadow-sm">
+          <div className="h-32  md:h-48 lg:h-56 bg-gray-200" >
+
+            <img src={v1} />
+          </div>
+          <div className="p-2 lg:bg-white">
+             <div className='flex  justify-between '>
+            <p className="text-[11px]  md:text-base
+            font-semibold">Villa avec Piscine</p>
+              <div className='flex  gap-1'>
+             <PiMapPinAreaFill className="text-blue-600" />
+             <p className="text-[9px]  text-gray-500 mt-1">Odza, Yaoundé</p>
+             </div>
+            </div>
             <p className="text-[10px] text-gray-600">250 000 Fcfa / nuit</p>
-            <PiMapPinAreaFill className="text-blue-600" />
-            <p className="text-[9px] text-gray-500 mt-1">Odza, Yaoundé</p>
+           
+            
+            <div className='flex  gap-1'>
             <HiMiniCheckBadge className="text-blue-600 text-[18px]" />
-            <p className="mt-1 text-[9px] text-[#0078EF] font-medium">
+            <p className="mt-1  text-[12px] text-[9px] text-[#0078EF] font-medium">
               Publié le 15 Décembre
             </p>
+            </div>
           </div>
         </article>
 
         {/* Carte 3 */}
-        <article className="border rounded-xl overflow-hidden bg-white shadow-sm">
+        <article className=" flex flex-col md:gap-8  gap-4border rounded-xl overflow-hidden bg-white shadow-sm">
           {/* Image placeholder */}
-          <div className="h-24 bg-gray-200" />
+          <div className="h-32 md:h-48 lg:h-56  bg-gray-200" >
+            <img src={v2} />
+          </div>
 
-          <div className="p-2 text-[10px]">
+          <div className="p-3 text-[10px] lg:bg-white">
 
             {/* Titre + localisation */}
             <div className="flex justify-between items-start">
-              <p className="font-semibold text-[9px] truncate max-w-[100px]">
+              <p className="font-semibold text-[12px] truncate max-w-[100px]">
                 Villa luxe
               </p>
 
@@ -142,7 +172,7 @@ function Profil(){
             <div className="flex items-center justify-between mt-1">
               <div className="flex items-center gap-1">
                 <HiMiniCheckBadge className="text-blue-600 text-[16px]" />
-                <p className="text-[#0078EF] font-medium text-[8px]">
+                <p className=" text-[12px] text-[#0078EF] font-medium text-[8px]">
                   Publié le 2 Novembre
                 </p>
               </div>
@@ -153,16 +183,18 @@ function Profil(){
 
 
         {/* Carte 4 */}
-        <article className="border rounded-xl overflow-hidden bg-white shadow-sm">
+        <article className=" flex flex-col md:gap-8 border rounded-xl overflow-hidden bg-white shadow-sm">
 
           {/* Image placeholder */}
-          <div className="h-24 bg-gray-200" />
+          <div className="h-32 md:h-48 lg:h-56  bg-gray-200" >
+            <img src={a1} />
+          </div>
 
-          <div className="p-2 text-[10px]">
+          <div className="p-3 text-[10px] lg:bg-white">
 
             {/* Titre + localisation */}
             <div className="flex justify-between items-start">
-              <p className="font-semibold text-[9px] truncate max-w-[100px]">
+              <p className="font-semibold text-[12px] truncate max-w-[100px]">
                 Appartement
               </p>
 
@@ -181,7 +213,7 @@ function Profil(){
             <div className="flex items-center justify-between mt-1">
               <div className="flex items-center gap-1">
                 <HiMiniCheckBadge className="text-blue-600 text-[16px]" />
-                <p className="text-[#0078EF] font-medium text-[8px]">
+                <p className=" text-[12px]  text-[#0078EF] font-medium text-[8px]">
                   Publié le 15 Décembre
                 </p>
               </div>
