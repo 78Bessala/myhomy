@@ -183,13 +183,13 @@ const backgrounds = [bg1, bg2, bg3,bg4];
      
      
                  {/* Bouton */}
-                 <button
+              <Link to="/login">   <button
                    type="submit"
                    className="w-full bg-[#0078EF]  h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-blue-600 transition-colors"
                  >
                    S'inscrire
                  </button>
-     
+              </Link> 
      
                  {/* Texte en bas */}
                  <p className="text-[11px] mt-6 text-black text-center">

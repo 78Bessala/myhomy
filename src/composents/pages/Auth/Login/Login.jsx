@@ -70,7 +70,7 @@ const Login = () => {
             `,
           }}
         >
-          <Link to="/voirtout" className="absolute top-4 left-4 text-white text-2xl">
+          <Link to="/voir-tout" className="absolute top-4 left-4 text-white text-2xl">
             <FaArrowLeftLong />
           </Link>
 
@@ -176,13 +176,14 @@ const Login = () => {
 
 
             {/* Bouton */}
-            <button
+           
+           <Link to="/voir-tout"><button
               type="submit"
-              className="w-full bg-[#0078EF]  h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-[#1A326F] transition-colors"
+              className="w-full bg-[#0078EF]  h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-blue-600 transition-colors"
             >
               se connecter
             </button>
-
+</Link> 
 
             {/* Texte en bas */}
             <p className="text-[10px] mt-6 text-black text-center">

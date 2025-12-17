@@ -26,85 +26,49 @@ function Footer1() {
 
   const activeItem = getActiveItem();
 
+  const menuItems = [
+    { name: 'Maison', path: '/voir-tout', icon: home, iconActive: home1 },
+    { name: 'Reservation', path: '/reservation', icon: reservation, iconActive: reservation1 },
+    { name: 'Favoris', path: '/favoris', icon: favoris, iconActive: favoris1 },
+    { name: 'Messages', path: '/message', icon: message1, iconActive: message },
+    { name: 'Profil', path: '/profil', icon: profil, iconActive: profil1 },
+  ];
+
   return (
-    <aside
-      className="
-    flex  flex-1
-        w-[280px] lg:w-
-        flex-shrink-0
-        h-screen
-        sticky top-0
-        flex-col
-        gap-10
-        bg-blue-100
-        px-6
-        pt-6
-        md:overflow-y-hidden
-      " id="footer1"
-    >
+    <aside id="footer1" 
+    className="flex flex-col flex-1 w-[280px] lg:w-[300px] flex-shrink-0 h-screen sticky top-0 gap-8 bg-gradient-to-b from-blue-50 to-blue-100 px-6 py-6 shadow-lg rounded-r-2xl">
+      
       {/* LOGO */}
       <img
         src={logo2}
         alt="logo"
-        className="w-full   md:mt-8 md:max-w-[270px] lg:mt-4  lg:max-w-[300px] lg:h-[100px] mx-auto mb-6"
+        className="w-full md:mt-8 md:max-w-[270px] lg:mt-4 lg:max-w-[300px] lg:h-[100px] mx-auto mb-6"
       />
 
       {/* MENU */}
-      <nav className="flex flex-col  justify-center    gap-10">
-        {/* Maison */}
-        <Link to="/voir-tout" className="flex items-center justify-center  gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full flex justify-center items-center ">
-          <img
-            src={activeItem === 'Maison' ? home1 : home}
-            className="w-10 h-10 -ml-8"
-          />
-          <span className={`text-xl ${activeItem === 'Maison' ? 'text-[#0078EF]' : ''}`}>
-            Maison
-          </span>
-        </Link>
-
-        {/* Reservation */}
-        <Link to="/reservation" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full ">
-          <img
-            src={activeItem === 'Reservation' ? reservation1 : reservation}
-            className="w-10 h-10"
-          />
-          <span className={`text-xl ${activeItem === 'Reservation' ? 'text-[#0078EF]' : ''}`}>
-            Reservation
-          </span>
-        </Link>
-
-        {/* Favoris */}
-        <Link to="/favoris" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full ">
-          <img
-            src={activeItem === 'Favoris' ? favoris1 : favoris}
-            className="w-10 h-10 -ml-10"
-          />
-          <span className={`text-xl ${activeItem === 'Favoris' ? 'text-[#0078EF]' : ''}`}>
-            Favoris
-          </span>
-        </Link>
-
-        {/* Messages */}
-        <Link to="/message" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-600 hover:rounded-full ">
-          <img
-            src={activeItem === 'Messages' ? message : message1}
-            className="w-10 h-10 -ml-5"
-          />
-          <span className={`text-xl ${activeItem === 'Messages' ? 'text-[#0078EF]' : ''}`}>
-            Messages
-          </span>
-        </Link>
-
-        {/* Profil */}
-        <Link to="/profil" className="flex items-center  justify-center gap-6 hover:w-full hover:h-12 hover:bg-blue-700 hover:rounded-full ">
-          <img
-            src={activeItem === 'Profil' ? profil1 : profil}
-            className="w-10 h-10 -ml-12"
-          />
-          <span className={`text-xl ${activeItem === 'Profil' ? 'text-[#0078EF]' : ''}`}>
-            Profil
-          </span>
-        </Link>
+      <nav className="flex flex-col gap-4 md:gap-6">
+        {menuItems.map((item) => {
+          const isActive = activeItem === item.name;
+          return (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`
+                flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300
+                ${isActive ? 'bg-blue-200 shadow-md' : 'hover:bg-blue-100'}
+              `}
+            >
+              <img
+                src={isActive ? item.iconActive : item.icon}
+                alt={item.name}
+                className="w-10 h-10"
+              />
+              <span className={`text-lg font-medium transition-colors duration-300 ${isActive ? 'text-[#0078EF]' : 'text-gray-700'}`}>
+                {item.name}
+              </span>
+            </Link>
+          );
+        })}
       </nav>
     </aside>
   );
