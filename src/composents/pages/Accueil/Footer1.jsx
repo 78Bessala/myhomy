@@ -36,7 +36,7 @@ function Footer1() {
 
   return (
     <aside id="footer1" 
-    className="flex flex-col flex-1 w-[280px] lg:w-[300px] flex-shrink-0 h-screen sticky top-0 gap-8 bg-gradient-to-b from-blue-50 to-blue-100 px-6 py-6 shadow-lg rounded-r-2xl">
+    className="flex flex-col flex-1 w-[280px] lg:w-[300px] shrink-0 h-screen sticky top-0 gap-8 bg-linear-to-b from-blue-50 to-blue-100 px-6 py-6 shadow-lg rounded-r-2xl">
       
       {/* LOGO */}
       <img

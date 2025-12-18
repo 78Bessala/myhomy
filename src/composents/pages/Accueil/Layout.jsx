@@ -16,7 +16,7 @@ function Layout({ children }) {
       </div>
       
       {/* 3. Le Contenu Principal (la page rendue par React Router) */}
-      <main className="flex-grow">
+      <main className="grow">
         {children}
       </main>
     </div>

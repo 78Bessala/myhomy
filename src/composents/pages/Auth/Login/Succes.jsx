@@ -40,7 +40,7 @@ const Succes = () => {
             <img
               src={logo}
               alt="logo"
-              className="w-48 h-48 object-contain mb-[-12px]"
+              className="w-48 h-48 object-contain mb-3"
             />
 
             {/* Frame34 en dessous */}

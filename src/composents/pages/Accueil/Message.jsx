@@ -1,7 +1,7 @@
 import Footer from './Footer'
 import { useState } from "react";
- import { FiSearch } from "react-icons/fi";
- import Footer1 from '../../../composents/pages/Accueil/Footer1';
+import { FiSearch } from "react-icons/fi";
+import Footer1 from '../../../composents/pages/Accueil/Footer1';
 import user from '../../../assets/public/user.jpeg';
 const messages = [
   {
@@ -63,105 +63,99 @@ const messages = [
 ];
 
 
-function Message(){
-const [tab, setTab] = useState("discussions");
-    return(
-      <section className="flex h-screen    overflow-x-hidden">
+function Message() {
+  const [tab, setTab] = useState("discussions");
+  return (
+    <section className="flex h-screen    overflow-x-hidden">
 
-       <Footer1 />
-         
-        
-        <main className="flex flex-3 flex-col flex-1 pt-12  max-w-full gap-4 min-h-screen bg-[#D9D9D9]">
-            <div className="flex flex-col min-h-screen bg-[#D9D9D9]">
-      {/* TOP BAR */}
-      <div className="bg-blue-600 text-white py-4 px-4 lg:px-8 flex items-center justify-between">
-        <h1 className="text-xl font-semibold lg:text-2xl">Messagerie</h1>
-        <div className="text-2xl lg:text-bold lg:text-3xl">⋮</div>
-      </div>
+      <Footer1 />
 
-      {/* SEARCH BAR */}
-      <div className="px-4 mt-3  md:mt-6 lg:mt-8 lg:m-8">
-        <div className="flex items-center bg-white rounded-full px-4 py-2 lg:h-12 shadow-sm">
-          <FiSearch className="text-gray-500 text-lg lg:h-6 lg:w-6" />
-          <input
-            type="text"
-            placeholder="Rechercher un message"
-            className="ml-3 flex-1 outline-none bg-transparent text-sm lg:text-lg"
-          />
-        </div>
-      </div>
 
-      {/* TABS */}
-      <div className="flex justify-around mt-4 px-4  lg:mt-0 lg:m-6">
-        <button
-          onClick={() => setTab("discussions")}
-          className={`px-6 py-2 rounded-full border border-1 cursor-pointer lg:h-12 lg:w-48 lg:text-lg ${
-            tab === "discussions"
-              ? "bg-blue-400  shadow font-semibold"
-              : "bg-transparent"
-          }`}
-        >
-          Discussions
-        </button>
+      <main className="flex flex-3 flex-col pt-12  max-w-full gap-4 min-h-screen bg-[#D9D9D9]">
+        <div className="flex flex-col min-h-screen bg-[#D9D9D9]">
+          {/* TOP BAR */}
+          <div className="bg-blue-600 text-white py-4 px-4 lg:px-8 flex items-center justify-between">
+            <h1 className="text-xl font-semibold lg:text-2xl">Messagerie</h1>
+            <div className="text-2xl lg:text-bold lg:text-3xl">⋮</div>
+          </div>
 
-        <button
-          onClick={() => setTab("notifications")}
-          className={`px-6 py-2 rounded-full border cursor-pointer lg:h-12 lg:w-48 lg:text-lg ${
-            tab === "notifications"
-              ? "bg-white shadow font-semibold"
-              : "bg-transparent"
-          }`}
-        >
-          Notifications
-        </button>
-      </div>
-
-      {/* MESSAGE LIST */}
-      <div className="flex-1 mt-4 overflow-y-auto px-4 pb-20  md:mt-6 lg:mt-8 lg:mx-16">
-        {messages.map((m) => (
-          <div key={m.id} className="flex items-center gap-3 mb-5">
-            {/* IMAGE */}
-            <div className="relative">
-              <img
-                // src={m.img}
-                src={user}
-                alt=""
-                className="w-12 h-12 rounded-full object-cover"
+          {/* SEARCH BAR */}
+          <div className="px-4 mt-3  md:mt-6 lg:mt-8 lg:m-8">
+            <div className="flex items-center bg-white rounded-full px-4 py-2 lg:h-12 shadow-sm">
+              <FiSearch className="text-gray-500 text-lg lg:h-6 lg:w-6" />
+              <input
+                type="text"
+                placeholder="Rechercher un message"
+                className="ml-3 flex-1 outline-none bg-transparent text-sm lg:text-lg"
               />
-
-              {m.unread > 0 && (
-                <span className="absolute -right-1 -top-1 bg-blue-600 text-white text-xs px-1.5 py-0.5 rounded-full">
-                  {m.unread}
-                </span>
-              )}
-            </div>
-
-            {/* TEXT */}
-            <div className="flex-1 border-b border-gray-300 pb-2">
-              <div className="flex justify-between">
-                <p className="font-semibold text-sm md:text-lg lg:text-xl">{m.name}</p>
-                <span className="text-xs text-gray-600 md:text-sm lg:text-lg">{m.time}</span>
-              </div>
-              <p className="text-gray-700 text-xs md:text-sm lg:text-lg">{m.msg}</p>
             </div>
           </div>
-        ))}
-      </div>
 
-     
-    </div>
+          {/* TABS */}
+          <div className="flex justify-around mt-4 px-4  lg:mt-0 lg:m-6">
+            <button
+              onClick={() => setTab("discussions")}
+              className={`px-6 py-2 rounded-full border cursor-pointer lg:h-12 lg:w-48 lg:text-lg ${tab === "discussions"
+                  ? "bg-blue-400  shadow font-semibold"
+                  : "bg-transparent"
+                }`}
+            >
+              Discussions
+            </button>
 
-      <Footer />
+            <button
+              onClick={() => setTab("notifications")}
+              className={`px-6 py-2 rounded-full border cursor-pointer lg:h-12 lg:w-48 lg:text-lg ${tab === "notifications"
+                  ? "bg-white shadow font-semibold"
+                  : "bg-transparent"
+                }`}
+            >
+              Notifications
+            </button>
+          </div>
 
-</main>
-        </section>
-      
+          {/* MESSAGE LIST */}
+          <div className="flex-1 mt-4 overflow-y-auto px-4 pb-20  md:mt-6 lg:mt-8 lg:mx-16">
+            {messages.map((m) => (
+              <div key={m.id} className="flex items-center gap-3 mb-5">
+                {/* IMAGE */}
+                <div className="relative">
+                  <img
+                    // src={m.img}
+                    src={user}
+                    alt=""
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
 
-    );
+                  {m.unread > 0 && (
+                    <span className="absolute -right-1 -top-1 bg-blue-600 text-white text-xs px-1.5 py-0.5 rounded-full">
+                      {m.unread}
+                    </span>
+                  )}
+                </div>
+
+                {/* TEXT */}
+                <div className="flex-1 border-b border-gray-300 pb-2">
+                  <div className="flex justify-between">
+                    <p className="font-semibold text-sm md:text-lg lg:text-xl">{m.name}</p>
+                    <span className="text-xs text-gray-600 md:text-sm lg:text-lg">{m.time}</span>
+                  </div>
+                  <p className="text-gray-700 text-xs md:text-sm lg:text-lg">{m.msg}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+
+        </div>
+
+        <Footer />
+
+      </main>
+    </section>
+
+
+  );
 }
 
 export default Message;
-
-
-
-

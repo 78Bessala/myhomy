@@ -1,14 +1,16 @@
 
 import logo from '../../../../images/logo.svg';
-import utilitaire from "../../../../images/utilitaire.jpeg";
+//import utilitaire from "../../../../images/utilitaire.jpeg";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { BsEyeSlash } from "react-icons/bs";
 import React, { useState, useEffect } from "react";
+import { apiRequest } from '../../../../service/api';
+
 
   
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bg3 from '../../../../assets/public/s4.jpg'
 import bg4 from '../../../../assets/public/03.jpg'
 import bg1 from '../../../../assets/public/v2.jpg'
@@ -17,9 +19,9 @@ import logo3 from '../../../../assets/public/logo3.svg'
 
 
 const backgrounds = [bg1, bg2, bg3,bg4];
- function Register () {
+function Register () {
 
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,184 +31,180 @@ const backgrounds = [bg1, bg2, bg3,bg4];
     return () => clearInterval(interval);
   }, []);
 
-    return (
-<main className="h-screen flex items-center justify-center  md:p-16 bg-gray-100 overflow-hidden">
+  const [showPassword, setShowPassWord] = useState(false)
+    const [form, setForm] = useState({
+        first_name:"",
+        last_name:"",
+        username:"",
+        password:"",
+        email:"",
+        phone:"",
+    });
+    const navigate = useNavigate()
+   
+    const toggleCheck=()=>{
+        setShowPassWord(!showPassword)
+    }
 
-      <section className="
-        w-full
-        h-full
-        max-w-7xl
-        flex
-        gap-4
-        md:rounded-2xl
-        bg-white
-         md:p-8
-        shadow-2xl
-        overflow-hidden
-      ">
-        <section id="bord"
-          className="
-            flex-1
-            h-full
-            bg-cover
-            bg-center
-            transition-all
-            duration-700
-            relative
-            flex
-            items-center
-            justify-center
-            rounded-xl
-            overflow-hidden
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try{
+            await apiRequest("/accounts/register/","POST", form);
+            alert("Compte créé avec succès")
             
-          "
-          style={{
-            backgroundImage: `
-              linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.1),
-                rgba(0, 0, 0, 0.8)
-              ),
-              url(${backgrounds[index]})
-            `,
-          }}
-        >
-          <Link to="/voir-tout" className="absolute top-4 left-4 text-white text-2xl">
-            <FaArrowLeftLong />
-          </Link>
+            const data  = await apiRequest("/auth/jwt/login", "POST", {username:form.username, password:form.password})
+            localStorage.setItem("access", data.access)
+            localStorage.setItem("refresh", data.refresh)
+            navigate("/voir-tout")
+        }catch{
+            alert("Erreur lors de l'inscription")
+        }
+    }
 
-          <img src={logo3} alt="logo" className="w-56 h-56" />
-        </section>
+    return (
+      <main className="h-screen flex items-center justify-center  md:p-16 bg-gray-100 overflow-hidden">
+        <section className="w-full h-full max-w-7xl flex gap-4 md:rounded-2xl bg-white md:p-8 shadow-2xl overflow-hidden">
+          <section id="bord"
+            className="flex-1 h-full bg-cover bg-center transition-all duration-700 relative flex items-center justify-center rounded-xl overflow-hidden"
+            style={{
+              backgroundImage: `
+                linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.1),
+                  rgba(0, 0, 0, 0.8)
+                ),
+                url(${backgrounds[index]})
+              `,
+            }}
+          >
+            <Link to="/voir-tout" className="absolute top-4 left-4 text-white text-2xl">
+              <FaArrowLeftLong />
+            </Link>
 
-
-      {/*ghcgfgfjf  */}
-
-
-
-
-
-      
-
-
-     {/* ///////////////////// */}
-     
-           <div className=" bg-[#A3D2FF]  md:bg-[#EBEBF2] flex  gap-12 md:gap-0 flex-col md:flex-row flex-1 md:rounded-xl">
-     
-     
-     
-             <div className="bg-[#A3D2FF] flex  gap-4   overflow-x-hidden">
-     
+            <img src={logo3} alt="logo" className="w-56 h-56" />
+          </section>
+          <div className=" bg-[#A3D2FF]  md:bg-[#EBEBF2] flex  gap-12 md:gap-0 flex-col md:flex-row flex-1 md:rounded-xl">
+            <div className="bg-[#A3D2FF] flex  gap-4   overflow-x-hidden">
                {/* Flèche retour */}
-               <Link to="/welcome">
-                 <div className="px-4 pt-4 text-black text-2xl cursor-pointer md:hidden">
-                   <FaArrowLeftLong />
-                 </div>
-               </Link>
-     
+              <Link to="/welcome">
+                <div className="px-4 pt-4 text-black text-2xl cursor-pointer md:hidden">
+                  <FaArrowLeftLong />
+                </div>
+              </Link>
                {/* Logo */}
-               <div className="flex justify-center items-center h-80">
-                 <img
-                   src={logo}
-                   alt="logo"
-                   className="w-56 h-56  object-contain md:hidden"
-                 />
-               </div>
-             </div>
+              <div className="flex justify-center items-center h-80">
+                <img src={logo} alt="logo" className="w-56 h-56  object-contain md:hidden"/>
+              </div>
+            </div>
      
              {/* Formulaire */}
-             <div className="w-full md:rounded-xl  h-full md:max-w-full  flex  flex-col gap-6 md:gap-8 lg:gap-12 md:min-h-full  bg-[#EBEBF2]   rounded-t-3xl md:rounded-[1px]  p-8 lg:p-12">
-     
-               {/* Titre */}
-               <h2 className="text-center text-3xl font-bold mb-6">S'inscrire</h2>
-               <div className="flex flex-col gap-4">
-
-     
-                 
-     
-                 {/* section suivqnte */}
-                 <div className="flex flex-col gap-4">
-                   
-
+            <form onSubmit={handleSubmit} >
+              <div className="w-full md:rounded-xl  h-full md:max-w-full  flex  flex-col gap-6 md:gap-8 lg:gap-12 md:min-h-full  bg-[#EBEBF2]   rounded-t-3xl   p-8 lg:p-12">
+                {/* Titre */}
+                <h2 className="text-center text-3xl font-bold mb-6">S'inscrire</h2>
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-6">
-                {/* nomggg */}
-               <div className="">
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="myhomy@example.com"
-                    className="w-full h-[48px] flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    required
-                  />
-                </div>
-                     {/* Champ email */}
-                     <div className="">
-                       <input
-                         type="email"
-                         id="email"
-                         placeholder="myhomy@example.com"
-                         className="w-full h-[48px] flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
-                         required
-                       />
-                     </div>
-     
-     
-                     {/* Champ mot de passe */}
-                     <div className=" relative">
-                       <input
-                         type="password"
-                         id="password"
-                         placeholder="****************"
-                         className="flex items-center w-full h-[48px] pl-4 border border-[#989393] rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
-                         required
-                       />
-                       <span className="absolute right-4 top-4 text-[#989393] cursor-pointer flex items-center"><BsEyeSlash /></span>
-                     </div>
-                   </div>
-
-                   {/* Ligne "ou avec" */}
-                 <div className="flex items-center my-4">
-                   {/* <hr className="flex-1  bg-gray-400"/> */}
-                   <span className="flex-1 h-px bg-[#989393]"></span>
-                   <span className="px-3 text-gray-500 text-sm">ou avec</span>
-                   {/* <hr className="flex-1  bg-[#989393]"/> */}
-                   <span className="flex-1 h-px bg-[#989393]"></span>
-                 </div>
-     
-                      {/* Boutons de connexion */}
-                 <div className="flex justify-center   gap-16 m-4 mb-4 text-3xl">
-                   <FcGoogle className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
-                   <FaFacebook className="text-blue-600 cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
-                   <FaApple className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
-                 </div>
-        
-                 </div>
-     
-     
+                    {/* nomggg */}
+                      <div className="">
+                        <input
+                          type="text"
+                          id="nom"
+                          onChange={e => setForm({...form, first_name:e.target.value})}
+                          placeholder="Nom"
+                          className="w-full h-10 flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          required
+                        />
+                      </div>
+                      <div className="">
+                        <input
+                          type="text"
+                          id="prenom"
+                          placeholder="Prénom"
+                          onChange={e => setForm({...form, last_name:e.target.value})}
+                          className="w-full h-12 flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          required
+                        />
+                      </div>
+                      {/* Champ email */}
+                      <div className="">
+                        <input
+                          type="text"
+                          id="username"
+                          placeholder="Nom d'utilisateur"
+                          onChange={e => setForm({...form, username:e.target.value})}
+                          className="w-full h-12 flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          required
+                        />
+                      </div>
+                      <div className="">
+                        <input
+                          type="email"
+                          id="email"
+                          placeholder="myhomy@example.com"
+                          onChange={e => setForm({...form, email:e.target.value})}
+                          className="w-full h-12 flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          required
+                        />
+                      </div>
+                      {/* Champ mot de passe */}
+                      <div className=" relative">
+                        <input
+                          type={showPassword ?"text" : "password"}
+                          id="password"
+                          placeholder="****************"
+                          onChange={e => setForm({...form, password:e.target.value})}
+                          className="flex items-center w-full h-12 pl-4 border border-[#989393] rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          required
+                        />
+                        <span onClick={toggleCheck} className="absolute right-4 top-4  text-[#989393] cursor-pointer flex items-center"><BsEyeSlash /></span>
+                      </div>
+                      <div className="">
+                        <input
+                          type="text"
+                          id="phone"
+                          placeholder="+237621222324"
+                          onChange={e => setForm({...form, phone:e.target.value})}
+                          className="w-full h-12 flex items-center pl-4 border border-[#989393]  rounded-[10px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+                          required
+                        />
+                      </div>
+                    </div>
+                    {/* Ligne "ou avec" */}
+                    <div className="flex items-center my-4">
+                      {/* <hr className="flex-1  bg-gray-400"/> */}
+                      <span className="flex-1 h-px bg-[#989393]"></span>
+                      <span className="px-3 text-gray-500 text-sm">ou avec</span>
+                      {/* <hr className="flex-1  bg-[#989393]"/> */}
+                      <span className="flex-1 h-px bg-[#989393]"></span>
+                    </div>
+                            {/* Boutons de connexion */}
+                    <div className="flex justify-center   gap-16 m-4 mb-4 text-3xl">
+                      <FcGoogle className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
+                      <FaFacebook className="text-blue-600 cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
+                      <FaApple className="cursor-pointer md:w-8 md:h-8 lg:h-10 lg:w-10 hover:-translate-y-1" />
+                    </div>
+              
+                  </div>
                  {/* Bouton */}
-              <Link to="/login">   <button
-                   type="submit"
-                   className="w-full bg-[#0078EF]  h-[48px]  text-base text-white py-3 rounded-[10px] hover:bg-blue-600 transition-colors"
-                 >
-                   S'inscrire
-                 </button>
-              </Link> 
-     
-                 {/* Texte en bas */}
-                 <p className="text-[11px] mt-6 text-black text-center">
-                   Vous avez deja un compte {" "}
+                  <button
+                      type="submit"
+                      className="w-full bg-[#0078EF]  12  text-base text-white py-2 rounded-[10px] hover:bg-blue-600 transition-colors"
+                    >
+                      S'inscrire
+                    </button>   
+                  {/* Texte en bas */}
+                  <p className="text-[11px] mt-6 text-black text-center">
+                    Vous avez deja un compte {" "}
                   <Link to ='/login'> <span className=" ml-1 text-[#0078EF] font-bold">Se connecter</span>.</Link>
-                 </p>
-     
-               </div>
-             </div>
-     
-           </div>
-</section>
-   
-   
-    
-    </main>
-  );
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    );
 
 };
 
