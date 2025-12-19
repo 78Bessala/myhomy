@@ -109,7 +109,6 @@ const Verification = () => {
               lg:gap-10
               bg-[#EAE6F4]
               rounded-t-3xl
-              md:rounded-[1px]
               p-8
               lg:p-12
               md:min-h-full

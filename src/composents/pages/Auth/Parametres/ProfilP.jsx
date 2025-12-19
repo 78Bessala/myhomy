@@ -9,7 +9,7 @@ import { GoPulse } from "react-icons/go";
 import { RiHome4Fill } from "react-icons/ri";
 import { HiMiniCheckBadge } from "react-icons/hi2";
 
-const ProfilP = () => {
+function ProfilP() {
   return (
     <div className="min-h-screen max-w-sm mx-auto bg-white font-sans text-[13px] ">
       {/* En-tête profil */}

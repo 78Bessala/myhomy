@@ -1,6 +1,7 @@
 import React from "react";
 import { FiCalendar, FiHeart, FiMessageCircle, FiUser } from "react-icons/fi";
 import { RiHome4Fill } from "react-icons/ri";
+
 const Sprof = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800 flex flex-col">
