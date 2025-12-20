@@ -110,7 +110,7 @@ function Accueil() {
         <div id="barre" className="h-16  w-full lg:h-20 bg-[#F3F2F2] md:bg-white  p-1 px-3 flex justify-center items-center gap-4">
           <div className="h-8 lg:h-10  md:w-[800px] w-full bg-[#D2D0D7] rounded-[10px] p-1 px-6 flex gap-4 items-center">
             <img src={search} className="w-6 h-6 lg:w-8 lg:h-8" alt="search" />
-            <h1 className="text-xs sm:text-sm md:text-base lg:text-xl">Rechercher une ville, une date, un prix</h1>
+            <input className="text-xs sm:text-sm md:text-base lg:text-xl">Rechercher une ville, une date, un prix</input>
           </div>
 
         </div>
